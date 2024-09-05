@@ -2,21 +2,19 @@
 
 ![Alejandro Gomez Lopez](bezos.jpg)
 
-¿Cuál es mi experiencia en desarrollo de software?
+Estudiante egresado de Ingeniería de Sistemas en la Universidad de Lima, actualmente llevo un ciclo adicional para terminar de especializarme en Ingeniería de Software y Desarrollo de Videojuegos
+
+**Experiencia en desarrollo de software:**
 
 Tengo conocimientos en Python, Java, JS, C, C++, y actualmente me encuentro practicando con videojuegos en Unity, haciendo uso del lenguaje C#
 
-¿Qué tecnologías conozco o domino?
+**¿Qué tecnologías conozco o domino?**
 
-Cuento con conocimientos en metologias ágiles como SCRUM o Jira. Ademas, se modelar en signavio y armar dashboards en PowerBi
-
-¿Cuál es mi expectativa del curso?
-
-Poder adquirir los conocimientos necesarios para especializarme en el area de Ingenieria de Software
-
-¿Cómo me veo en 10 años? 
-
-Trabajando en el area de videojuegos (sufriendo crunch) con un buen sueldo 
+ - Metologias ágiles: SCRUM / Jira.
+ - Modelar en signavio
+ - Armar dashboards en PowerBi
+ - Lenguajes: Python, Java, JS, C, C++
+ - Herramientas: NetBeans, Spyder, VSCode, Unity
 
 
 [Ver integrantes](../integrantes.md)
