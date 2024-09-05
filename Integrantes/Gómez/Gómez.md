@@ -17,4 +17,4 @@ Tengo conocimientos en Python, Java, JS, C, C++, y actualmente me encuentro prac
  - Herramientas: NetBeans, Spyder, VSCode, Unity
 
 
-[Regresar al índice](../../proyecto.md)
+[Regresar al índice](../../README.md)
