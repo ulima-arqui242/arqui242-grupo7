@@ -13,6 +13,5 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 ### De aquí a 10 años
 - Trabajando para un proyecto relacionada a las páginas web, tareas como darle mantenimiento o agregar nuevas funcionalidades.
 
-[Ver integrantes](../integrantes.md)
 
 [Regresar al índice](../../proyecto.md)
