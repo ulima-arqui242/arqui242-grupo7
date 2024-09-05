@@ -7,4 +7,4 @@
 - [Abraham Bustíos Terres](Bustios/Bustios.md)
 - [Aaron Livias Vigil](Livias/Livias.md)
 
-[Regresar al índice](../proyecto.md)
+[Regresar al índice](../README.md)
