@@ -20,4 +20,4 @@ Ampliar mis conocimientos en el área del desarrollo de software para adentrarme
 Como un desarrollador independiente y dueño de mi propio estudio de desarrollo de videojuegos.
 
 
-[Regresar al índice](../README.md)
+[Regresar al índice](README.md)
