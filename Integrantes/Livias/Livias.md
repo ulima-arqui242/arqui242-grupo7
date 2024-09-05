@@ -14,4 +14,4 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 - Trabajando para un proyecto relacionada a las páginas web, tareas como darle mantenimiento o agregar nuevas funcionalidades.
 
 
-[Regresar al índice](../../proyecto.md)
+[Regresar al índice](../../README.md)
