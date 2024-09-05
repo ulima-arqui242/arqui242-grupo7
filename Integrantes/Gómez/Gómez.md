@@ -17,6 +17,4 @@ Tengo conocimientos en Python, Java, JS, C, C++, y actualmente me encuentro prac
  - Herramientas: NetBeans, Spyder, VSCode, Unity
 
 
-[Ver integrantes](../integrantes.md)
-
 [Regresar al índice](../../proyecto.md)
