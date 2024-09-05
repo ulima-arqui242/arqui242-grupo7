@@ -1,5 +1,15 @@
 # Proyecto Grupal - Arquitectura de Software
 
+# Grupo 07
+
+## Integrantes
+- [Bustios Terres, Abraham Aldair Josue](Integrantes/Bustios/Bustios.md)
+- [Cartolin Yanque, Mario Alexander](Integrantes/Cartolin/Cartolin.md)
+- [Gómez López, Alejandro](Integrantes/Gómez/Gómez.md)
+- [Livias Vigil, Aaron Wagner Lincoln](Integrantes/Livias/Livias.md)
+- [Lopez Taranco, Andre Alexander](Integrantes/Lopez/Lopez.md)
+- [Zuñiga Mariño, George Roosevelt](Integrantes/Zuñiga/Zuñiga.md)
+
 ## Tabla de Contenido
 - [1 Caso de Negocio](./1/1.md)
   - [1.1 Generalidades](./1/1.1/1.1.md)
