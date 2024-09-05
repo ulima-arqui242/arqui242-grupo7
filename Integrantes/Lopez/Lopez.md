@@ -6,4 +6,4 @@ No tengo mucha experiencia en desarrollo de software ya que no es algo que me ap
 
 
 
-[Regresar al índice](../../proyecto.md)
+[Regresar al índice](../../README.md)
