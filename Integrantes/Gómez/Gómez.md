@@ -1,6 +1,6 @@
 # Alejandro Gomez
 
-![Alejandro Gomez Lopez](Gomez.jpg)
+![Alejandro Gomez Lopez|100](Gomez.jpg)
 
 Estudiante egresado de Ingeniería de Sistemas en la Universidad de Lima, actualmente llevo un ciclo adicional para terminar de especializarme en Ingeniería de Software y Desarrollo de Videojuegos
 
