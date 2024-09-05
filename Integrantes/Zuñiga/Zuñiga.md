@@ -6,4 +6,4 @@ Jeff Bezos es el fundador de Amazon, donde se desempeñó como presidente, CEO, 
 
 
 
-[Regresar al índice](../../proyecto.md)
+[Regresar al índice](../../README.md)
