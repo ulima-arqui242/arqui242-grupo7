@@ -1,4 +1,4 @@
-# Jeff Bezos
+# George Zuñiga
 
 ![Jeff Bezos](bezos.jpg)
 ### Experiencia:
