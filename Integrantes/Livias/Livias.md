@@ -55,8 +55,14 @@ Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en 
 
 ![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
 
-### consideraciones técnicas
+### Consideraciones técnicas
+Primero se establece una maquina virtual con los siguientes comandos en el command prompt:
+'''
+python -m venv mi_entorno
+mi_entorno\Scripts\activate
+'''
 
+![Flujo Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=16LtKE4OniMIASw3RjdzQo5vLLYf-ncbL)
 
 
 ## Algoritmos de resumen de texto
