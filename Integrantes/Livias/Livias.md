@@ -27,16 +27,16 @@ Es un algoritmo que realiza un cálculo estadístico para medir qué terminos so
 TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
 
 $$
-TF (t,d)=(Número total de t en d)/(Número total de términos en d)
+TF (t,d)=(`Número total de t en d`)/(`Número total de términos en d`)
 $$
 
 IDF: El IDF mide que tanto ese término específico aparece en el corpus
 
 $$
-IDF (t)=1+log⁡((Número total de documentos)/(Número de documentos en t))
+IDF (t)=1+log⁡((`Número total de documentos`)/(`Número de documentos en t`))
 $$
 
-En síntesis, las palabras con mayor TF-IDF se caracterizar por ser de las más frecuentes en ese texto pero exacass en todo el corpus que representa el conjunto de texto. Funciona bien si comentarios similares tienden a compartir las mismas palabras o términos clave, pero sensible a los stopwords. Por eso hay que filtrarlos
+En síntesis, las palabras con mayor TF-IDF se caracterizar por ser de las más frecuentes en ese texto pero excasas en todo el corpus que representa el conjunto de texto. Funciona bien si comentarios similares tienden a compartir las mismas palabras o términos clave, pero sensible a los stopwords. Son palabras irrelevantes para el algoritmo las cuales pueden ser: "la", "y", "los", etc. Por eso hay que filtrarlos.
 
 #### Doc2vec
 Captura relaciones semánticas más profundas a nivel de documento. Ejemplo: "La entrega fue excelente" y "Me llegó muy rápido" tiene una relación semántica alta. Esta basada en word2vec la cual tiene dos arquitecturas principales:
@@ -79,14 +79,39 @@ nltk.download('wordnet')
 #   Soporta lematización en varios idiomas
 nltk.download('omw-1.4')
 ```
-
+Terminada la instalación, se procederá a explicar la lógica del proyecto.
 
 ![Flujo Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=16LtKE4OniMIASw3RjdzQo5vLLYf-ncbL)
+
+1) A partir de un diccionario, se tokeniza para segmentar las oraciones en palabras y se lematiza para convertar la palabra en su forma base.
+2) Podemos utilizar tanto TF-IDF como Doc2vec para generar vectores de representación de reseñas o Embeddings. Con respecto al modelo Doc2vec se requiere establecer algunos parametros de entrada para el entrenamiento. Cabe aclara que por default, el Doc2vec utiliza la arquitectura DM, pero si se requiere cambiar de arquitectura se agraga un parámetro extra definido como 'dm=0'. A continuación los parámetros del modelo:
+```
+# Definir y entrenar el modelo Doc2Vec
+model = Doc2Vec(vector_size=50, #longitud vector que representa la palabra
+                window=2, #Número de palabras (izq o der) a tomar en cuenta para hallar la palabra objetivo (La palabra que se va a predecir).
+                min_count=1, # El número mínimo de veces que una palabra debe aparecer para considerarse.
+                workers=4, # El número de hilos (threads) - Tareas que se realizan en parelelo para agilizar el modelo.
+                epochs=100 # Número de veces que pasará el modelo por el conjunto de datos.
+                )
+```
+3) Luego se utiliza las métricas de similitud más populares como la similitud coseno o la distancia euclidiana y así clasificar los vectores. Esto genera una matriz o un arrays de arryas, en la que cada array representa un documento y sus valores el nivel de similitud que tien hacia otros documentos. En la imagen, el primer valor es 1 porque el texto uno es igual al texto 1, pero en el segundo array el 1 se observa en el segundo valor (indicando que el texto 2 es igual al . Así se representa la probabilidad que hay en que un texto sea similar a otro.
+
+![Matriz Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1zF2DL02Ile-c2_AzyUA9sHxSZNHT-f6Z)
+  
+4) Se escoge la ID de un texto, por ejemplo, la ID=3 y a partir de la array escogido se ordena de mayor a menor las probabilidades a través de un algoritmo de ordenamiento de Quicksort o directamente argost de Numpy.
+
+Lo cual si se escoge la ID = 3, se obtendrá como resultado:
+
+![Resultado Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1mdlsfVwzELy5BNfo2FMh8hBEkP08fGbu)
 
 
 ## Algoritmos de resumen de texto
 
 ## Fuentes
+[Doc2Vec — Computing Similarity between Documents](https://medium.com/red-buffer/doc2vec-computing-similarity-between-the-documents-47daf6c828cd)
+
+[Practical Guide To Doc2Vec & How To Tutorial In Python](https://spotintelligence.com/2023/09/06/doc2vec/)
+
 [Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).](https://doi.org/10.11591/ijece.v13i1.pp936-947)
 
 [Blessed, G., Bello Kontagora, N., Agajo, J., & Aliyu, I. (2023). Performance evaluation of keyword extraction techniques and stop word lists on speech-to-text corpus. The International Arab Journal of Information Technology, 20(1).](https://doi.org/10.34028/iajit/20/1/14)
