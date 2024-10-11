@@ -13,5 +13,14 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 ### De aquí a 10 años
 - Trabajando para un proyecto relacionada a las páginas web, tareas como darle mantenimiento o agregar nuevas funcionalidades.
 
+# Tema elegido: Técnicas NLP
+## Panorama General
+
+## Modelos de simlitud
+
+## Algoritmos de resumen de texto
+
+## Fuentes
+![Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).]
 
 [Regresar al índice](../../README.md)
