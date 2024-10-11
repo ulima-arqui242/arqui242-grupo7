@@ -113,7 +113,7 @@ Es un algoritmo de NLP inspirada en PageRank porque asigna una puntuación a cad
 
 ### Consideraciones técnicas
 
-Se instalará las siguientes librerias:
+El lenguaje principal a utilizar es python, no obstante para la visualización de los datos se utilizó Jupiter. En la versión de python, se instalará las siguientes librerias:
 ```
 pip install numpy pandas scikit-learn nltk
 ```
@@ -160,6 +160,10 @@ A continuación se presentará un video que explicará más a detalle el trabajo
 [Doc2Vec — Computing Similarity between Documents](https://medium.com/red-buffer/doc2vec-computing-similarity-between-the-documents-47daf6c828cd)
 
 [Practical Guide To Doc2Vec & How To Tutorial In Python](https://spotintelligence.com/2023/09/06/doc2vec/)
+
+[Video de TextRank](https://www.youtube.com/watch?v=wszNhc3iQHg&t=15s)
+
+[Algoritmo de TextRank](https://medium.com/@theofany007/implementation-of-textrank-and-methods-for-keyword-extraction-b84f8f145b2e)
 
 [Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).](https://doi.org/10.11591/ijece.v13i1.pp936-947)
 
