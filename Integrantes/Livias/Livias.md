@@ -18,9 +18,24 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 ## Modelos de simlitud
 
+### Doc2vec
+  
+#### Desarrollo conceptual
+
+| **Memoria Distribuida (DM)** | **Bolsa Distribuida de Palabras (DBOW)** |
+|-------------------------------|-----------------------------------------|
+| Predice palabras a partir de los vectores de palabras y documentos. | Predecir las palabras a partir del vector del documento. |
+| Representación global del documento y la relación que hay dentro de sus palabras. | Representación global del documento. |
+| Los datos no se tratan como una bolsa. | Las palabras se tratan como una "bolsa". |
+
+#### consideraciones técnicas
+
+
+### TF-IDF
+
 ## Algoritmos de resumen de texto
 
 ## Fuentes
-![Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).]
+([Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).](https://doi.org/10.11591/ijece.v13i1.pp936-947))
 
 [Regresar al índice](../../README.md)
