@@ -133,21 +133,22 @@ Terminada la instalación, se procederá a explicar la metodología del proyecto
 ![Diagrama TextRank](https://drive.google.com/uc?export=view&id=1DkVanXMxZqrt3cmLGb0-v7EFdn4AWuIV)
 
 
-1. Tokenizar el documento en oraciones y luego se utiliza TF-IDF para encontrar las oraciones más representativas.
+1. Se divide el texto en oraciones a partir de un '.', luego se corrigen las oraciones finales y casos donde hay doble puntos, se establece un ancho fijo en la segmentación de oraciones para evitar que la matriz sea extensa y filtrar los stopwords.
+2. Tokenizar el documento en oraciones y luego se utiliza TF-IDF para encontrar las oraciones más representativas.
    
-2. Se aplica la similitud coseno para generar el grafo representativo del textrank pero aún faltaría los puntajes asociados.
+3. Se aplica la similitud coseno para generar el grafo representativo del textrank pero aún faltaría los puntajes asociados.
 
 ![Similitud coseno](https://drive.google.com/uc?export=view&id=1dxvX2DJUZWT0g7fxUUw22_K30neQnmbJ)
   
-3. Se normaliza la matriz de modo que se aumente los valores que son casi nulos, así facilitar al modelo en calcular las oraciones más representativas y evitar generar nodos aislados debido a que no tiene conexión con otro. De esta forma cada nodo tiene una probabilidad más alta para parecerse a otro de manera semántica.
+4. Se normaliza la matriz de modo que se aumente los valores que son casi nulos, así facilitar al modelo en calcular las oraciones más representativas y evitar generar nodos aislados debido a que no tiene conexión con otro. De esta forma cada nodo tiene una probabilidad más alta para parecerse a otro de manera semántica.
 
 ![Matriz TextRank](https://drive.google.com/uc?export=view&id=1P4zdb3t2xXnJ2R2f4MPc4c7GcQr4RCCM)
 
-4. Se calculan el PageRank o directamente el Eigenvectors para asignar los nodos más representivos del todo grafo asociado. A partir de una secuencia iterativa, se varia la longitud de los vectores para encontrar los puntajes acorde al grafo.
+5. Se calculan el PageRank o directamente el Eigenvectors para asignar los nodos más representivos del todo grafo asociado. A partir de una secuencia iterativa, se varia la longitud de los vectores para encontrar los puntajes acorde al grafo.
 
 ![PageRank](https://drive.google.com/uc?export=view&id=1f8AAQ2k4QxINLmg8N2ktH8-kiD1VaWC2)
 
-5. Se extrae las oraciones más representativas del texto a partir del algoritmo de ordenamiento.
+6. Se extrae las oraciones más representativas del texto a partir del algoritmo de ordenamiento.
 
 ![Resultados TextRank](https://drive.google.com/uc?export=view&id=1PrBN-2p21D23oF1zh_wMcNWZUxBO_U10)
 
