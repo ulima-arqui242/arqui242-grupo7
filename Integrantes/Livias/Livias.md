@@ -15,10 +15,20 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 # Tema elegido: Técnicas NLP
 ## Panorama General
-![Mi imagen](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
+El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
+![Mercado Libre](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
+## Modelos de simlitud de textos
 
-## Modelos de simlitud
-
+### TF-IDF
+Es un algoritmo que realiza un cálculo estadístico para medir qué terminos son relevantes para un texto en particular. Está compuesto por dos términos:
+TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
+$$
+TF (t,d)=(Número total de t en d)/(Número total de términos en d)
+$$
+IDF: El IDF mide que tanto ese término específico aparece en el corpus
+$$
+IDF (t)=1+log⁡((Número total de documentos)/(TérminoNúmero de documentos en t))
+$$
 ### Doc2vec
   
 #### Desarrollo conceptual
@@ -30,9 +40,6 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 | Los datos no se tratan como una bolsa. | Las palabras se tratan como una "bolsa". |
 
 #### consideraciones técnicas
-
-
-### TF-IDF
 
 ## Algoritmos de resumen de texto
 
@@ -47,5 +54,5 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 [Hong, M., Chung, N., & Koo, C. (2023). Tourism recommendation based on word embedding from card transaction data. Computer Science and Information Systems.](https://doi.org/10.2298/CSIS220620002H)
 
-
+## Regresar
 [Regresar al índice](../../README.md)
