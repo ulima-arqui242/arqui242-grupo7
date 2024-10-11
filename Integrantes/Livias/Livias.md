@@ -16,13 +16,8 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 # Tema elegido: Técnicas NLP
 ## Panorama General
 El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
+
 ![Mercado Libre](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
-
-https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=sharing
-
-https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V
-
-![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
 
 ## Modelos de simlitud de textos
 
@@ -32,13 +27,13 @@ Es un algoritmo que realiza un cálculo estadístico para medir qué terminos so
 TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
 
 $$
-TF (t,d)=(Número_total_de_t_en_d)/(Número_total_de_términos_en_d)
+TF (t,d)=(Número total de t en d)/(Número total de términos en d)
 $$
 
 IDF: El IDF mide que tanto ese término específico aparece en el corpus
 
 $$
-IDF (t)=1+log⁡((Número_total_de_documentos)/(Número_de_documentos_en_t))
+IDF (t)=1+log⁡((Número total de documentos)/(Número de documentos en t))
 $$
 
 En síntesis, las palabras con mayor TF-IDF se caracterizar por ser de las más frecuentes en ese texto pero exacass en todo el corpus que representa el conjunto de texto. Funciona bien si comentarios similares tienden a compartir las mismas palabras o términos clave, pero sensible a los stopwords. Por eso hay que filtrarlos
@@ -58,8 +53,11 @@ Arquitectura principales de Doc2vec:
 
 Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en su desempeño para la recomendación de películas:
 
+![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
 
 ### consideraciones técnicas
+
+
 
 ## Algoritmos de resumen de texto
 
