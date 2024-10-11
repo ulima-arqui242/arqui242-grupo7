@@ -15,7 +15,7 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 # Tema elegido: Técnicas NLP
 ## Panorama General
-![Mercado Libre](https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=drive_link)
+![Mercado Libre]([https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=drive_link](https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=sharing))
 
 ## Modelos de simlitud
 
