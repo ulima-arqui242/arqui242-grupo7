@@ -57,6 +57,7 @@ Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en 
 
 ### Consideraciones técnicas
 Primero se establece una maquina virtual con los siguientes comandos en el command prompt:
+
 '''
 python -m venv mi_entorno
 mi_entorno\Scripts\activate
