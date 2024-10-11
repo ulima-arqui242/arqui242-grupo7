@@ -17,33 +17,49 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 ## Panorama General
 El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
 ![Mercado Libre](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
+
+https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=sharing
+
+https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V
+
+![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
+
 ## Modelos de simlitud de textos
 
-### TF-IDF
+### Desarrollo conceptual
+#### TF-IDF
 Es un algoritmo que realiza un cálculo estadístico para medir qué terminos son relevantes para un texto en particular. Está compuesto por dos términos:
 TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
 
 $$
-TF (t,d)=(Número total de t en d)/(Número total de términos en d)
+TF (t,d)=(Número_total_de_t_en_d)/(Número_total_de_términos_en_d)
 $$
 
 IDF: El IDF mide que tanto ese término específico aparece en el corpus
 
 $$
-IDF (t)=1+log⁡((Número total de documentos)/(TérminoNúmero de documentos en t))
+IDF (t)=1+log⁡((Número_total_de_documentos)/(Número_de_documentos_en_t))
 $$
 
-### Doc2vec
-  
-#### Desarrollo conceptual
+En síntesis, las palabras con mayor TF-IDF se caracterizar por ser de las más frecuentes en ese texto pero exacass en todo el corpus que representa el conjunto de texto. Funciona bien si comentarios similares tienden a compartir las mismas palabras o términos clave, pero sensible a los stopwords. Por eso hay que filtrarlos
+
+#### Doc2vec
+Captura relaciones semánticas más profundas a nivel de documento. Ejemplo: "La entrega fue excelente" y "Me llegó muy rápido" tiene una relación semántica alta. Esta basada en word2vec la cual tiene dos arquitecturas principales:
+1. CBOW: Captura la relación semántica de las palabras y su entrenamiento consiste en predecir una palabra a partir de las palabras que lo rodea, pero expresado en números o vectores. La cual la arquitectura DM se basa de CBOW para la creación de la variante Doc2vec.
+2. Skip-gram: En contraste, esta arquitectura se centra en predecir varias palabras a partir de la palabra objetivo. A partir de este se basa la arquitectura DBOW de Doc2vec.
+
+Arquitectura principales de Doc2vec:
 
 | **Memoria Distribuida (DM)** | **Bolsa Distribuida de Palabras (DBOW)** |
 |-------------------------------|-----------------------------------------|
 | Predice palabras a partir de los vectores de palabras y documentos. | Predecir las palabras a partir del vector del documento. |
 | Representación global del documento y la relación que hay dentro de sus palabras. | Representación global del documento. |
-| Los datos no se tratan como una bolsa. | Las palabras se tratan como una "bolsa". |
+| Los datos no se tratan como una bolsa. | Las palabras se tratan como una "bolsa" dado que el orden de estas no importan |
 
-#### consideraciones técnicas
+Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en su desempeño para la recomendación de películas:
+
+
+### consideraciones técnicas
 
 ## Algoritmos de resumen de texto
 
