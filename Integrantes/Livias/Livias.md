@@ -56,12 +56,30 @@ Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en 
 ![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
 
 ### Consideraciones técnicas
-Primero se establece una maquina virtual con los siguientes comandos en el command prompt:
+El lenguaje de programación a utilizar es python. Primero se establece una maquina virtual con los siguientes comandos en el command prompt:
 
-'''
+```
 python -m venv mi_entorno
 mi_entorno\Scripts\activate
-'''
+```
+
+Luego se instala las librerias necesarias para la generación del modelo:
+```
+pip install nltk scikit-learn gensim pandas numpy
+```
+
+Adicionalmente, se descarga librerias específicas, lo puede hacer con el command prompt o ejecutandolo una sola vez en el código:
+```
+# Tokenización
+nltk.download('punkt') 
+nltk.download('punkt_tab')
+
+# Lematización
+nltk.download('wordnet')
+#   Soporta lematización en varios idiomas
+nltk.download('omw-1.4')
+```
+
 
 ![Flujo Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=16LtKE4OniMIASw3RjdzQo5vLLYf-ncbL)
 
