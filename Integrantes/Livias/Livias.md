@@ -26,15 +26,11 @@ El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud d
 Es un algoritmo que realiza un cálculo estadístico para medir qué terminos son relevantes para un texto en particular. Está compuesto por dos términos:
 TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
 
-$$
 TF (t,d)=(`Número total de t en d`)/(`Número total de términos en d`)
-$$
 
 IDF: El IDF mide que tanto ese término específico aparece en el corpus
 
-$$
 IDF (t)=1+log⁡((`Número total de documentos`)/(`Número de documentos en t`))
-$$
 
 En síntesis, las palabras con mayor TF-IDF se caracterizar por ser de las más frecuentes en ese texto pero excasas en todo el corpus que representa el conjunto de texto. Funciona bien si comentarios similares tienden a compartir las mismas palabras o términos clave, pero sensible a los stopwords. Son palabras irrelevantes para el algoritmo las cuales pueden ser: "la", "y", "los", etc. Por eso hay que filtrarlos.
 
@@ -56,7 +52,7 @@ Asimismo, Eberhard et al. (2024) realiza una comparación de estas técnicas en 
 ![Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1d0D7_7yMKR82JuIjj2x0OLeuQTzh5Q8V)
 
 ### Consideraciones técnicas
-El lenguaje de programación a utilizar es python. Primero se establece una maquina virtual con los siguientes comandos en el command prompt:
+El lenguaje de programación a utilizar es python. Primero se establece una maquina virtual con los siguientes comandos en el command prompt. Se recomienda utilizar una maquina virtual para evitar que la instalación de las dependencias de trabajos pasados no generen problemas con el proyecto actual.:
 
 ```
 python -m venv mi_entorno
@@ -67,6 +63,12 @@ Luego se instala las librerias necesarias para la generación del modelo:
 ```
 pip install nltk scikit-learn gensim pandas numpy
 ```
+
+1. NumPy: Para ordenar los arregloes de mayor a menor.
+2. Pandas: Para la manipulación de los dataframe generados por el diccionario o el archivo en formato .csv
+3. gsim: Para la generación del modelo Doc2vec.
+4. Scikit-learn: Para la creación del TF-IDF.
+5. NLTK: Abarcar diferentes herramientas NLP y se utilizará para filtrar tokenizar y lematizar.
 
 Adicionalmente, se descarga librerias específicas, lo puede hacer con el command prompt o ejecutandolo una sola vez en el código:
 ```
@@ -83,7 +85,7 @@ Terminada la instalación, se procederá a explicar la lógica del proyecto.
 
 ![Flujo Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=16LtKE4OniMIASw3RjdzQo5vLLYf-ncbL)
 
-1) A partir de un diccionario, se tokeniza para segmentar las oraciones en palabras y se lematiza para convertar la palabra en su forma base.
+1) A partir de un diccionario, se tokeniza para segmentar las oraciones en palabras y se lematiza para convertir la palabra en su forma base.
 2) Podemos utilizar tanto TF-IDF como Doc2vec para generar vectores de representación de reseñas o Embeddings. Con respecto al modelo Doc2vec se requiere establecer algunos parametros de entrada para el entrenamiento. Cabe aclara que por default, el Doc2vec utiliza la arquitectura DM, pero si se requiere cambiar de arquitectura se agraga un parámetro extra definido como 'dm=0'. A continuación los parámetros del modelo:
 ```
 # Definir y entrenar el modelo Doc2Vec
@@ -104,8 +106,55 @@ Lo cual si se escoge la ID = 3, se obtendrá como resultado:
 
 ![Resultado Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1mdlsfVwzELy5BNfo2FMh8hBEkP08fGbu)
 
+## Algoritmo de resumen de texto - TextRank
+### Desarrollo conceptual
 
-## Algoritmos de resumen de texto
+Es un algoritmo de NLP inspirada en PageRank porque asigna una puntuación a cada página web basada en el número o cantidad de enlaces que esta tiene sobre otras páginas. Shaistha (2024) indica que el algoritmo asigna una puntuación a cada palabra clave según la relación que tienen con otras palabras clave. Tanto PageRank como TextRank utilizan un algoritmo recursivo para calcular la importancia de páginas o palabras según la actualización de sus puntuaciones basado en relaciones, lo cual presenta información representativa de un documento, lo cual resulta ventajoso para grandes cantidades de texto.
+
+### Consideraciones técnicas
+
+Se instalará las siguientes librerias:
+```
+pip install numpy pandas scikit-learn nltk
+```
+1. NumPy: Para ordenar los arregloes de mayor a menor.
+2. Pandas: Para la manipulación de los dataframe generados por el diccionario o el archivo en formato .csv
+3. Scikit-learn: Para la creación del TexkRank y TF-IDF.
+4. NLTK: Abarcar diferentes herramientas NLP y se utilizará para filtrar los stopwords.
+
+Adicionalmente se descarga la libreria de los stopwords en donde solo se necesita ejecutar una vez para su instalación:
+```
+import nltk
+nltk.download('stopwords')
+```
+
+Terminada la instalación, se procederá a explicar la metodología del proyecto:
+
+![Diagrama TextRank](https://drive.google.com/uc?export=view&id=1DkVanXMxZqrt3cmLGb0-v7EFdn4AWuIV)
+
+
+1. Tokenizar el documento en oraciones y luego se utiliza TF-IDF para encontrar las oraciones más representativas.
+   
+2. Se aplica la similitud coseno para generar el grafo representativo del textrank pero aún faltaría los puntajes asociados.
+
+![Similitud coseno](https://drive.google.com/uc?export=view&id=1dxvX2DJUZWT0g7fxUUw22_K30neQnmbJ)
+  
+3. Se normaliza la matriz de modo que se aumente los valores que son casi nulos, así facilitar al modelo en calcular las oraciones más representativas y evitar generar nodos aislados debido a que no tiene conexión con otro. De esta forma cada nodo tiene una probabilidad más alta para parecerse a otro de manera semántica.
+
+![Matriz TextRank](https://drive.google.com/uc?export=view&id=1P4zdb3t2xXnJ2R2f4MPc4c7GcQr4RCCM)
+
+4. Se calculan el PageRank o directamente el Eigenvectors para asignar los nodos más representivos del todo grafo asociado. A partir de una secuencia iterativa, se varia la longitud de los vectores para encontrar los puntajes acorde al grafo.
+
+![PageRank](https://drive.google.com/uc?export=view&id=1f8AAQ2k4QxINLmg8N2ktH8-kiD1VaWC2)
+
+5. Se extrae las oraciones más representativas del texto a partir del algoritmo de ordenamiento.
+
+![Resultados TextRank](https://drive.google.com/uc?export=view&id=1PrBN-2p21D23oF1zh_wMcNWZUxBO_U10)
+
+## Video
+
+A continuación se presentará un video que explicará más a detalle el trabajo descrito.
+[Video individual](https://drive.google.com/file/d/1yANwjCY09ROsNuj49xsa3Xe3aGUbfR_N/view?usp=sharing)
 
 ## Fuentes
 [Doc2Vec — Computing Similarity between Documents](https://medium.com/red-buffer/doc2vec-computing-similarity-between-the-documents-47daf6c828cd)
@@ -121,6 +170,8 @@ Lo cual si se escoge la ID = 3, se obtendrá como resultado:
 [Eberhard, L., Popova, K., Walk, S., & Helic, D. (2024). Computing recommendations from free-form text. Expert Systems with Applications, 236(121268), 121268.](https://doi.org/10.1016/j.eswa.2023.121268)
 
 [Hong, M., Chung, N., & Koo, C. (2023). Tourism recommendation based on word embedding from card transaction data. Computer Science and Information Systems.](https://doi.org/10.2298/CSIS220620002H)
+
+[Shaistha, F. (2024). How TextRank Algorithm Helps in Effortless Keyword Extraction. Markovml.](https://www.markovml.com/blog/textrank-algorithm)
 
 ## Regresar
 [Regresar al índice](../../README.md)
