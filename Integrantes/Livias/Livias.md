@@ -22,13 +22,17 @@ El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud d
 ### TF-IDF
 Es un algoritmo que realiza un cálculo estadístico para medir qué terminos son relevantes para un texto en particular. Está compuesto por dos términos:
 TF: Calcula el número total de términos y el número total de apariciones de un término específico (t) en un documento (d). 
+
 $$
 TF (t,d)=(Número total de t en d)/(Número total de términos en d)
 $$
+
 IDF: El IDF mide que tanto ese término específico aparece en el corpus
+
 $$
 IDF (t)=1+log⁡((Número total de documentos)/(TérminoNúmero de documentos en t))
 $$
+
 ### Doc2vec
   
 #### Desarrollo conceptual
