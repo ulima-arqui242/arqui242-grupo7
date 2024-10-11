@@ -96,7 +96,7 @@ model = Doc2Vec(vector_size=50, #longitud vector que representa la palabra
                 epochs=100 # Número de veces que pasará el modelo por el conjunto de datos.
                 )
 ```
-3) Luego se utiliza las métricas de similitud más populares como la similitud coseno o la distancia euclidiana y así clasificar los vectores. Esto genera una matriz o un arrays de arryas, en la que cada array representa un documento y sus valores el nivel de similitud que tien hacia otros documentos. En la imagen, el primer valor es 1 porque el texto uno es igual al texto 1, pero en el segundo array el 1 se observa en el segundo valor (indicando que el texto 2 es igual al . Así se representa la probabilidad que hay en que un texto sea similar a otro.
+3) Luego se utiliza las métricas de similitud más populares como la similitud coseno o la distancia euclidiana y así clasificar los vectores. Esto genera una matriz o un arrays de arrays, en la que cada array representa un documento y sus valores el nivel de similitud que tienen hacia otros documentos. En la imagen, el primer valor es 1 porque el texto uno es igual al texto 1, pero en el segundo array el 1 se observa en el segundo valor (indicando que el texto 2 es igual al 2). Así se representa la probabilidad que hay en que un texto sea similar a otro.
 
 ![Matriz Doc2vec y TF-IDF](https://drive.google.com/uc?export=view&id=1zF2DL02Ile-c2_AzyUA9sHxSZNHT-f6Z)
   
