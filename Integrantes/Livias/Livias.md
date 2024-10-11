@@ -15,6 +15,7 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 # Tema elegido: Técnicas NLP
 ## Panorama General
+![Mercado Libre](https://drive.google.com/file/d/1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5/view?usp=drive_link)
 
 ## Modelos de simlitud
 
@@ -36,6 +37,10 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 ## Algoritmos de resumen de texto
 
 ## Fuentes
-([Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).](https://doi.org/10.11591/ijece.v13i1.pp936-947))
+[Abdurahman, B. Z., Ikhsan, N., Muslim, K. K. I., Kenneth, D. R., & Dwi, H. R. (2023). Movie recommender chatbot based on Dialogflow. International Journal of Electrical and Computer Engineering (IJECE).](https://doi.org/10.11591/ijece.v13i1.pp936-947)
+[Blessed, G., Bello Kontagora, N., Agajo, J., & Aliyu, I. (2023). Performance evaluation of keyword extraction techniques and stop word lists on speech-to-text corpus. The International Arab Journal of Information Technology, 20(1).](https://doi.org/10.34028/iajit/20/1/14)
+[¿Cómo generar palabras clave a partir de un texto? (2024, mayo 2). Eskritor.](https://eskritor.com/es/generar-palabras-clave-a-partir-de-texto/)
+[Eberhard, L., Popova, K., Walk, S., & Helic, D. (2024). Computing recommendations from free-form text. Expert Systems with Applications, 236(121268), 121268.](https://doi.org/10.1016/j.eswa.2023.121268)
+[Hong, M., Chung, N., & Koo, C. (2023). Tourism recommendation based on word embedding from card transaction data. Computer Science and Information Systems.](https://doi.org/10.2298/CSIS220620002H)
 
 [Regresar al índice](../../README.md)
