@@ -22,6 +22,8 @@ Como un desarrollador independiente y dueño de mi propio estudio de desarrollo 
 
 
 
-## Tema elegido: Técnicas NLP
+## Tema elegido: API Management
+
+### Desarrollo Conceptual
 
 [Regresar al índice](../../README.md)
