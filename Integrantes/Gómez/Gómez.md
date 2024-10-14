@@ -23,6 +23,8 @@ Los **datos geoespaciales** son información que está asociada a una ubicación
 
 Los datos geoespaciales se recopilan a través de diversas tecnologías, como sistemas de información geográfica (SIG), GPS, satélites, y sensores, y su análisis permite tomar decisiones estratégicas en diversas industrias, desde la planificación urbana hasta la conservación ambiental.
 
+Algunos elementos a tener en cuenta son los siguientes:
+
 #### Coordenadas espaciales:
 Son el componente fundamental de los datos geoespaciales. Utilizan un sistema de referencia (generalmente latitud y longitud) para ubicar puntos específicos en la Tierra. Esto permite realizar un seguimiento preciso de objetos o fenómenos en un espacio determinado.
 
