@@ -62,7 +62,7 @@ El **Consumidor** es el componente que escucha y reacciona a los eventos emitido
   - Un sistema de inventario que, al recibir un evento de compra, reduce la cantidad disponible del producto en cuestión.
   - Un servicio de notificaciones que envía un correo electrónico al cliente una vez que su pedido ha sido confirmado.
 
-### **Canales de Eventos**
+### **Canales de Eventos (Event Brokers)**
 
 Los **Canales de Eventos** son la infraestructura que permite que los productores y los consumidores intercambien información sin depender directamente uno del otro. Estos canales pueden tomar la forma de colas, temas o flujos de datos en tiempo real, y su elección depende de las necesidades del sistema en términos de rendimiento y fiabilidad.
 
@@ -80,6 +80,7 @@ Los **Canales de Eventos** son la infraestructura que permite que los productore
   | **Streams**         | Los eventos son transmitidos como un flujo continuo de datos, donde pueden ser procesados en tiempo real o almacenados para procesamiento posterior. |
 
 ![Diagrama de Interacción entre Productor, Consumidor y Canal](./diagrama.png)
+
 *Figura 1: Relación entre Productor, Consumidor y Canal de Eventos.*
 
 ---
