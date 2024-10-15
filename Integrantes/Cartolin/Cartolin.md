@@ -79,7 +79,7 @@ Los **Canales de Eventos** son la infraestructura que permite que los productore
   | **Temas (Topics)**  | Los eventos son publicados en un tema al que múltiples consumidores pueden suscribirse. Esto permite que varios servicios respondan al mismo evento. |
   | **Streams**         | Los eventos son transmitidos como un flujo continuo de datos, donde pueden ser procesados en tiempo real o almacenados para procesamiento posterior. |
 
-![Diagrama de Interacción entre Productor, Consumidor y Canal](ruta/a/imagen_interaccion_componentes.png)
+![Diagrama de Interacción entre Productor, Consumidor y Canal](./diagrama.png)
 *Figura 1: Relación entre Productor, Consumidor y Canal de Eventos.*
 
 ---
