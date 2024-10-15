@@ -1,24 +1,8 @@
-# Mario Cartolin
+# Integrante: Mario Alexander Cartolin Yanque
 
 Soy Mario Alexander Cartolin Yanque, estudiante de noveno ciclo en la carrera de Ingeniería de Sistemas. Tengo experiencia intermedia en desarrollo de software a través de proyectos académicos, principalmente en lenguajes como C++, Python, Java, y JavaScript, además de frameworks como React. Aunque no tengo mucho conocimiento sobre la arquitectura de software, sé que esta área es crucial para diseñar sistemas robustos y escalables. Espero que el curso me ayude a entender cómo aplicar principios de arquitectura para mejorar la eficiencia y mantenimiento de los proyectos que desarrolle en el futuro. En 10 años, me imagino trabajando como ingeniero de software en una empresa innovadora, desarrollando soluciones que impacten positivamente en la sociedad.
 
 # Trabajo Individual: Arquitectura Basada en Eventos
-
-## Índice
-
-1. [Introducción](#introducción)
-2. [¿Qué es la Arquitectura Basada en Eventos?](#qué-es-la-arquitectura-basada-en-eventos)
-3. [Componentes Clave](#componentes-clave)
-   - [**Productor (Producer)**](#productor-producer)
-   - [**Consumidor (Consumer)**](#consumidor-consumer)
-   - [**Canales de Eventos**](#canales-de-eventos)
-4. [Tipos de Procesamiento de Eventos](#tipos-de-procesamiento-de-eventos)
-5. [Ventajas y Desventajas](#ventajas-y-desventajas)
-6. [Casos de Uso](#casos-de-uso)
-7. [Consideraciones de Diseño](#consideraciones-de-diseño)
-8. [Conclusión](#conclusión)
-
----
 
 ## Introducción
 
