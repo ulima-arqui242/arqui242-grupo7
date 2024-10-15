@@ -43,4 +43,7 @@ la gestión de APIs permite a los usuarios monitorear el uso del API, la carga, 
 #### Monetización: 
 esta función permite el cobro por el acceso a APIs comerciales. Esto incluye el soporte para configurar reglas de precios, según el uso, la carga y la funcionalidad, emitir facturas y cobrar pagos.
 
+### Consideraciones Técnicas:
+
+
 [Regresar al índice](../../README.md)
