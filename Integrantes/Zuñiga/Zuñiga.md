@@ -50,19 +50,23 @@ Azure Cosmos DB es una base de datos NoSQL de Microsoft, diseñada para ofrecer 
 
 ## INICIACION DE LA BD
 ABRIR LA BD DE COSMODB MEDIANTE UN NAVEGADOR
-### 1er paso : Ir al portal de AZURE , e inciar sesion con una cuenta .
+### 1er paso : Ir al portal de AZURE , inciar sesion con una cuenta e ingresar a CosmoDB.
+![image](https://github.com/user-attachments/assets/04ed3851-7d07-4d03-8db9-670785703c88)
+
 ### 2do paso : Crear la BD
 ![](BDMON.png)
-### 3er paso : crear los proyectos y dependecias necesarias
-1. **Crear un proyecto Maven** 
+### 3er paso : Construir el codigo y Ejecutarlo
+1. Descargar los recursos MAVEN 
+**https://maven.apache.org/download.cgi**
 
-
+2. Crear un proyecto Maven 
 Ejecutar el siguiente codigo en la terminal de VSCODE para crear un archivo MAVEN:
 
 ---------------
 **mvn archetype:generate -DgroupId=com.ejemplo.cosmosdb -DartifactId=CosmosDBExample -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false**
 
 --------------
+
 
 3. Modificar las dependencias actuales por
 **<dependencies>
@@ -73,10 +77,14 @@ Ejecutar el siguiente codigo en la terminal de VSCODE para crear un archivo MAVE
     </dependency>
 </dependencies>**
 
-4.
+4. Estructurar el Codigo en VSCODE con la cadena de CONEXION PRINCIPAL que azure te proporciona
+![image](https://github.com/user-attachments/assets/2fa7a265-0df5-4946-a7fc-9b6711f01a5b)
 ![image](https://github.com/user-attachments/assets/e54dd511-0d04-4510-a21c-b3b72ba6601d)
-
-
+5. Instalar las dependencias necesarias
+![image](https://github.com/user-attachments/assets/ce650f6b-8388-41b0-9b44-e261b646b0c6)
+6. Ejecutar el codigo
+![image](https://github.com/user-attachments/assets/904dd710-2e27-4d98-88d3-f9779e8d9632)
+![image](https://github.com/user-attachments/assets/878efb1e-e1af-4fc4-9881-4bb50e832c24)
 
 
 
