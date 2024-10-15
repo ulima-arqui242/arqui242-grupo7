@@ -6,7 +6,7 @@ Soy Mario Alexander Cartolin Yanque, estudiante de noveno ciclo en la carrera de
 
 ## Introducción
 
-La **Arquitectura Basada en Eventos** (EBA, por sus siglas en inglés) es un paradigma de diseño ampliamente utilizado en sistemas distribuidos modernos que requieren alta escalabilidad, flexibilidad y capacidad de procesamiento en tiempo real. A través de este enfoque, los componentes del sistema están diseñados para reaccionar a los **eventos** que representan cambios de estado o actividades de interés. Esta arquitectura permite a las aplicaciones reaccionar a las condiciones de su entorno de manera casi instantánea, lo que es crucial para los sistemas que gestionan grandes volúmenes de datos o requieren respuestas inmediatas.
+La **Arquitectura Basada en Eventos** (EDA, por sus siglas en inglés) es un paradigma de diseño ampliamente utilizado en sistemas distribuidos modernos que requieren alta escalabilidad, flexibilidad y capacidad de procesamiento en tiempo real. A través de este enfoque, los componentes del sistema están diseñados para reaccionar a los **eventos** que representan cambios de estado o actividades de interés. Esta arquitectura permite a las aplicaciones reaccionar a las condiciones de su entorno de manera casi instantánea, lo que es crucial para los sistemas que gestionan grandes volúmenes de datos o requieren respuestas inmediatas.
 
 ---
 
@@ -119,4 +119,34 @@ Al diseñar un sistema basado en eventos, es importante tener en cuenta:
 
 La Arquitectura Basada en Eventos es una solución eficiente y flexible para sistemas que requieren procesamiento en tiempo real, alta escalabilidad y tolerancia a fallos. Su capacidad para desacoplar los componentes del sistema mediante el uso de eventos como mecanismo de comunicación es esencial para la construcción de aplicaciones modernas. Sin embargo, la implementación exitosa de este paradigma requiere una cuidadosa planificación en la elección de herramientas, el diseño de eventos y la gestión de la infraestructura subyacente.
 
+
+# Implementación de Apache Kafka
+
+## Introducción
+
+### ¿Qué es Apache Kafka?
+
+Apache Kafka es una plataforma de streaming distribuida y de código abierto desarrollada por la Fundación Apache. Está diseñada para manejar flujos de datos en tiempo real de manera eficiente y confiable. Kafka permite la publicación, suscripción, almacenamiento y procesamiento de flujos de registros en tiempo real, convirtiéndolo en una opción ideal para sistemas que requieren alto rendimiento y escalabilidad.
+
+### Características de Apache Kafka
+
+- **Alto Rendimiento**: Capaz de manejar millones de mensajes por segundo con baja latencia.
+- **Escalabilidad Horizontal**: Se puede escalar fácilmente añadiendo más nodos al clúster.
+- **Durabilidad y Fiabilidad**: Los mensajes se persisten en disco y se replican en el clúster para evitar pérdidas de datos.
+- **Sistema Distribuido**: Soporta múltiples productores y consumidores simultáneamente.
+- **Integración**: Compatible con diversas herramientas y frameworks para procesamiento en tiempo real como Kafka Streams y Apache Spark.
+
+### Ventajas sobre Otras Soluciones
+
+- **Comparado con RabbitMQ**:
+  - **Modelo de Mensajería**: Kafka utiliza un modelo de registro distribuido, lo que lo hace más eficiente para el procesamiento de flujos de datos y eventos en tiempo real.
+  - **Rendimiento**: Mejor manejo de altas tasas de transferencia de mensajes con menor sobrecarga de red.
+  - **Persistencia por Defecto**: A diferencia de RabbitMQ, Kafka persiste todos los mensajes, lo que permite procesar datos históricos.
+
+- **Comparado con ActiveMQ**:
+  - **Escalabilidad**: Kafka ofrece una escalabilidad horizontal más sencilla y eficiente.
+  - **Latencia**: Proporciona latencias más bajas para la entrega de mensajes.
+  - **Ecosistema**: Cuenta con un ecosistema más amplio y una comunidad activa que aporta mejoras y soporte continuo.
+
+---
 [Regresar al índice](../../README.md)
