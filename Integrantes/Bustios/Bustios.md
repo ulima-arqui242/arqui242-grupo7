@@ -45,5 +45,9 @@ esta función permite el cobro por el acceso a APIs comerciales. Esto incluye el
 
 ### Consideraciones Técnicas:
 
+La plataforma de API management en cuestión es "Apigee", plataforma de API management de google. Para este proyecto usaremos APIGEE para establecer un proxy entre el frontend y backend .
+
+Para ello es necesario 
+
 
 [Regresar al índice](../../README.md)
