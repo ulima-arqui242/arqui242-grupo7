@@ -1,6 +1,5 @@
 # George Zuñiga
 
-![Jeff Bezos](bezos.jpg)
 ### Experiencia:
 Cuento con experiencia en codigo de bajo nivel ,ademas de herramientas digitales aplicadas a la realidad virtual , y con desarrollo en antiguos proyectos experimentales para sitios web. 
 ### Tecnologías:
@@ -21,6 +20,7 @@ Aplicar mi conocimiento aprendido a diferentes usos , ademas de tener diferentes
 ## **TEMA ELEGIDO**:  NoSQL - Bases de Datos Orientadas a Documentos
 Las bases de datos de documentos son una categoría de sistemas NoSQL que permiten almacenar y consultar datos en formatos como JSON. Este formato, conocido como Notación de Objetos de JavaScript (JSON), es un medio de intercambio de datos que resulta fácil de leer tanto para umanos como para máquinas. Los desarrolladores pueden utilizar documentos JSON en su código y guardarlos de forma directa en una base 
 de datos de documentos. Su naturaleza flexible, semi-estructurada y jerárquica facilita la evolución de las aplicaciones de acuerdo a sus necesidades.
+![](CosmoDB.png)
 ### Bases de datos de documentos JSON
 1. **Facilidad de desarrollo**:
 Los documentos JSON se alinean estrechamente con los objetos, un tipo de dato común en la mayoría de lenguajes de programación. Durante el desarrollo de aplicaciones, los programadores pueden crear y actualizar documentos de forma directa desde su código, eliminando la necesidad de definir modelos de datos previamente, lo que hace que el desarrollo sea más ágil.
@@ -47,5 +47,40 @@ Azure Cosmos DB es una base de datos NoSQL de Microsoft, diseñada para ofrecer 
 ### Desventajas:
 1. Costo Elevado: Puede ser caro con muchas réplicas o alto tráfico.
 2. Relaciones Complejas: No es ideal para aplicaciones con múltiples relaciones entre datos, como bases de datos SQL.
+
+## INICIACION DE LA BD
+ABRIR LA BD DE COSMODB MEDIANTE UN NAVEGADOR
+### 1er paso : Ir al portal de AZURE , e inciar sesion con una cuenta .
+### 2do paso : Crear la BD
+![](BDMON.png)
+### 3er paso : crear los proyectos y dependecias necesarias
+1. **Crear un proyecto Maven** 
+
+
+Ejecutar el siguiente codigo en la terminal de VSCODE para crear un archivo MAVEN:
+
+---------------
+**mvn archetype:generate -DgroupId=com.ejemplo.cosmosdb -DartifactId=CosmosDBExample -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false**
+
+--------------
+
+3. Modificar las dependencias actuales por
+**<dependencies>
+    <dependency>
+        <groupId>org.mongodb</groupId>
+        <artifactId>mongo-java-driver</artifactId>
+        <version>3.12.10</version>
+    </dependency>
+</dependencies>**
+
+4.
+![image](https://github.com/user-attachments/assets/e54dd511-0d04-4510-a21c-b3b72ba6601d)
+
+
+
+
+
+
+
 
 [Regresar al índice](../../README.md)
