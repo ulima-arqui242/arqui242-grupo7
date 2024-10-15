@@ -152,9 +152,9 @@ Terminada la instalación, se procederá a explicar la metodología del proyecto
 
 ![Resultados TextRank](https://drive.google.com/uc?export=view&id=1PrBN-2p21D23oF1zh_wMcNWZUxBO_U10)
 
-## Video
+## Video de la dema
 
-A continuación se presentará un video que explicará más a detalle el trabajo descrito.
+A continuación se presentará un video de la demo que explicará más a detalle el trabajo descrito.
 [Video individual](https://drive.google.com/file/d/1yANwjCY09ROsNuj49xsa3Xe3aGUbfR_N/view?usp=sharing)
 
 ## Fuentes
