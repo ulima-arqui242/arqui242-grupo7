@@ -87,6 +87,9 @@ Ejecutar el siguiente codigo en la terminal de VSCODE para crear un archivo MAVE
 ![image](https://github.com/user-attachments/assets/878efb1e-e1af-4fc4-9881-4bb50e832c24)
 
 
+# ENLACE DEL VIDEO :
+### https://drive.google.com/file/d/1xSZsN9KD-ypYWFEx6YlAGP5Ns1hzhukX/view?usp=sharing
+
 
 
 
