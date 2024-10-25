@@ -52,7 +52,12 @@ Para ello es necesario
 
 ## Patron Cloud a Implementar : Valet Key
 
-Un problema que logramos identificar es que al contar con 2 tipos de usuarios para el aplicativo web y que ambos cuentan con acceso a caracteristicas muy distintas del sistema 
+**Problema :** 
+Un problema que logramos identificar es que al contar con 2 tipos de usuarios para el aplicativo web , el usuario (cliente) y el usuario (Proveedor) . El Cliente debe poder acceder a funciones como el buscador de servicios y contratación de proveedor, mientras que el proveedor debe poder publicitar sus servicios, responder mensajes y actualziar etapa del servicio ( contratado , en proceso , finalziado). Por ende, es importante restringir el acceso de un tipo usuario a las funciones de otro tipo de usuario y evitar errores .
+**Solución:**
+Mediante la implemetnación del patrón Valet Key ( token de acceso), se puede asignar un token distintivo a cada tipo de usuario a la hora de logearse en la paltaforma , y de esa forma restrtingir el acceso a cada tipo de usuario.
+**Casos de aplcación :**
+
 
 
 
