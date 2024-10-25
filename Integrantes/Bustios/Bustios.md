@@ -50,7 +50,7 @@ La plataforma de API management en cuestión es "Apigee", plataforma de API mana
 Para ello es necesario 
 
 
-## Patron Cloud a Implementar :
+## Patron Cloud a Implementar : Valet Key
 
 
 
