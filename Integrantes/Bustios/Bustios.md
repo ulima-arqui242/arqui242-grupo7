@@ -52,6 +52,8 @@ Para ello es necesario
 
 ## Patron Cloud a Implementar : Valet Key
 
+Un problema que logramos identificar es que al contar con 2 tipos de usuarios para el aplicativo web y que ambos cuentan con acceso a caracteristicas muy distintas del sistema 
+
 
 
 
