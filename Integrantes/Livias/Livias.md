@@ -178,5 +178,35 @@ A continuación se presentará un video de la demo que explicará más a detalle
 
 [Shaistha, F. (2024). How TextRank Algorithm Helps in Effortless Keyword Extraction. Markovml.](https://www.markovml.com/blog/textrank-algorithm)
 
+# Deployment Stamps: Implementación de Patrones Cloud
+
+## Desarrollo del patrón
+
+### Problema
+
+Si se aloja una única instancia de la aplicación en la nube, existe la posibilidad de que presente limitaciones en la escabilidad. Es decir, una vez que la aplicación llegue al tope en usuarios conectados al mismo tiempo o el número de recursos utilizados al máximo, el rendimiento de la aplicación caerá notablemente. Además, se plantea el problema en la segmentación de los clientes. Por ejemplo, si un cliente utiliza la aplicación con frecuencia y depende de los recursos de esta requerira que la tasa de actualizaciones sea la mínima y solo si es una versión estable; no obstante, si se tiene un cliente la cual no depende de forma crítica de la aplicación entonces tolerará de mejor formas estas actualizaciones. 
+
+### Solución
+
+Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad horizontal se vuelve más estable ya que se puede crear instacias de la aplicación conocidos como sellos, las cuales se pueden hacer cambios de forma independiente. Es como crear pequeños clones de la aplicación para asignarlo a un tipo de cliente en particular. Cada instancia tiene su propia configuración y tasa de actualizaciones. 
+
+### Casos de aplicación
+
+1. Cuando se tiene varios grupos de clientes segmentados en todo el país, en donde se pueden conectar en la instancia de la nube más cercana para evitar problemas de conectivadad.
+2. Cuando se requiera abordar una mayor demanda en la aplicación, en vez de comprar un servicio en la nube más grande, solo se requerira manejar varias instancia de la aplicación para que cada grupo pueda segmentar los clientes.
+
+### Aplicación en el grupo
+
+
+3. **Desarrollo de Código y Demo**:
+   - Implemente una solución que utilice el patrón seleccionado en un caso real o en un escenario de ejemplo bien definido.
+   - Documente el caso real y detalle el proceso de implementación, asegurándose de describir cada paso realizado.
+   - (Opcional) Prepare una demo en video donde muestre el funcionamiento de la implementación, explicando brevemente su funcionamiento.
+
+4. **Entrega**:
+   - Sobre su página personal en el repositorio de Github del grupo debe agregar una sección titulada "Patrones Cloud".
+   - Puede desarrollar el código en el mismo repo o en un repositorio externo.
+   - Si realiza el video, súbalo a una plataforma de su elección (YouTube, Vimeo, etc.) y comparta el enlace en la documentación.
+
 ## Regresar
 [Regresar al índice](../../README.md)
