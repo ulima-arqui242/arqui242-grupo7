@@ -188,7 +188,7 @@ Si se aloja una única instancia de la aplicación en la nube, existe la posibil
 
 ### Solución
 
-Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad horizontal se vuelve más estable ya que se puede crear instacias de la aplicación conocidos como sellos, las cuales se pueden hacer cambios de forma independiente. Es como crear pequeños clones de la aplicación para asignarlo a un tipo de cliente en particular. Cada instancia tiene su propia configuración y tasa de actualizaciones. 
+Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad horizontal se vuelve más estable ya que se puede crear instacias de la aplicación conocidos como stamps, las cuales se pueden hacer cambios de forma independiente. Es como crear pequeños clones de la aplicación para asignarlo a un tipo de cliente en particular. Cada instancia tiene su propia configuración y tasa de actualizaciones. 
 
 ### Casos de aplicación
 
@@ -197,6 +197,7 @@ Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad h
 
 ### Aplicación en el grupo
 
+Se podría segmentar los clientes por vendedores pequeños, medianos y grandes. Asi cuando los clientes que más requieran más recursos de la aplicación entonces se manejara un mayor será los recursos proporcionados.
 
 3. **Desarrollo de Código y Demo**:
    - Implemente una solución que utilice el patrón seleccionado en un caso real o en un escenario de ejemplo bien definido.
