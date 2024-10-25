@@ -197,7 +197,7 @@ Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad h
 
 ### Aplicación en el grupo
 
-Se podría segmentar los clientes por vendedores pequeños, medianos y grandes. Asi cuando los clientes que más requieran más recursos de la aplicación entonces se manejara un mayor será los recursos proporcionados.
+Se podría segmentar los clientes por vendedores pequeños, medianos y grandes. Asi cuando los clientes que requieran más recursos de la aplicación, se le brindará un servicio más estable en el proveedor de la nube y su propio contendor. Un contenedor permite ejecutar la aplicación de manera aislada, junto con sus dependencias, sin necesidad de depender del principal. Por ejemplo, se puede tener un contendor para backend y otro para el frontend, ambos corriendo al mismo tiempo utilizando Docker. Además, se puede utilizar Docker Swarm para gestionar la implementación de esos contenedores.
 
 3. **Desarrollo de Código y Demo**:
    - Implemente una solución que utilice el patrón seleccionado en un caso real o en un escenario de ejemplo bien definido.
