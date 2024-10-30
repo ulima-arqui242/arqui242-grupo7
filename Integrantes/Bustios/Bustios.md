@@ -53,7 +53,7 @@ Para ello es necesario
 ## Patron Cloud a Implementar : Asynchronous Request-Reply
 
 - **Problema :**
-El problema que se logró identificar es que al momento de completarse el servicio brindado y proceder con el pago
+El problema que se logró identificar es que al momento de completarse el servicio brindado y proceder con el pago el usuario es forzado a esperar en una pantalla de confirmación la concretación del pago, imposibilitando al usuario seguir utilizando otros apartados de la aplicación al tener que esperar en dicha pantalla . O tmbien en caso el usuario cierre accidentalmente la aplicación este pueda regresar a la misma pantalla de confirmación del pago sin que ocurra algún error debido a la  
   
 Un problema que logramos identificar es que al contar con 2 tipos de usuarios para el aplicativo web , el usuario (cliente) y el usuario (Proveedor) . El Cliente debe poder acceder a funciones como el buscador de servicios y contratación de proveedor, mientras que el proveedor debe poder publicitar sus servicios, responder mensajes y actualziar etapa del servicio ( contratado , en proceso , finalziado). Por ende, es importante restringir el acceso de un tipo usuario a las funciones de otro tipo de usuario y evitar errores.
 
