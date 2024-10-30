@@ -50,9 +50,11 @@ La plataforma de API management en cuestión es "Apigee", plataforma de API mana
 Para ello es necesario 
 
 
-## Patron Cloud a Implementar : Valet Key
+## Patron Cloud a Implementar : Asynchronous Request-Reply
 
-- **Problema :** 
+- **Problema :**
+El problema que se logró identificar es que al momento de completarse el servicio brindado y proceder con el pago
+  
 Un problema que logramos identificar es que al contar con 2 tipos de usuarios para el aplicativo web , el usuario (cliente) y el usuario (Proveedor) . El Cliente debe poder acceder a funciones como el buscador de servicios y contratación de proveedor, mientras que el proveedor debe poder publicitar sus servicios, responder mensajes y actualziar etapa del servicio ( contratado , en proceso , finalziado). Por ende, es importante restringir el acceso de un tipo usuario a las funciones de otro tipo de usuario y evitar errores.
 
 - **Solución:**
