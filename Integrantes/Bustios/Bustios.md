@@ -75,8 +75,12 @@ Esto se refuerza aún más cuando de peticiones sincronas se tratan, aunque si b
 4. Por ultimo el cliente envia una petición GET a la dirección brindada por el servidor para finalmente acceder al recurso solicitado.
 
 
+![foto](asy.png)
+
+
 
 ### **Casos de aplcación :**
+
 
 
 
