@@ -53,14 +53,25 @@ Para ello es necesario
 ## Patron Cloud a Implementar : Asynchronous Request-Reply
 
 - **Problema :**
+
+Hoy en dia las aplicaciones  que corren en navegadores  hacen uso de multiples API's para ofrecer funcionalidad y valor a las empresas y usuarios. Estas usualmente se hacen mediante llamadas en el protocolo HTTP y Rest, y aunque en al acutalidad la gra mayoria de estas apis están optimizadas para responder en 100ms o menos todavia hay muchos factores que pueden afectar la latencia en la respuesta, cómo por ejemplo:
+
+  -Componentes de seguridad.
+  -La ubicación geográfica relativa del autor de la llamada y el backend.
+  -Infraestructura de red.
+  -Carga actual.
+  -El tamaño de la carga útil de la solicitud.
+  -Longitud de la cola de procesamiento.
+  -El tiempo que tarda el backend en procesar la solicitud.
+
+
 El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
 
 
-
 - **Solución:**
-Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan seguir completnado el registro en el aplicativo mientras que 
+Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
 
-**Casos de aplcación :**
+- **Casos de aplcación :**
 
 
 
