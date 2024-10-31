@@ -53,7 +53,8 @@ Para ello es necesario
 ## Patron Cloud a Implementar : Asynchronous Request-Reply
 
 - **Problema :**
-El problema que se logró identificar es que al momento de completarse el servicio brindado y proceder con el pago el usuario es forzado a esperar en una pantalla de confirmación la concretación del pago, imposibilitando al usuario seguir utilizando otros apartados de la aplicación al tener que esperar en dicha pantalla . O tmbien en caso el usuario cierre accidentalmente la aplicación este pueda regresar a la misma pantalla de confirmación del pago sin que ocurra algún error debido a la  
+El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la carga de la API 
+momento de completarse el servicio brindado y proceder con el pago el usuario es forzado a esperar en una pantalla de confirmación la concretación del pago, imposibilitando al usuario seguir utilizando otros apartados de la aplicación al tener que esperar en dicha pantalla . O tmbien en caso el usuario cierre accidentalmente la aplicación este pueda regresar a la misma pantalla de confirmación del pago sin que ocurra algún error debido a la  
   
 
 - **Solución:**
