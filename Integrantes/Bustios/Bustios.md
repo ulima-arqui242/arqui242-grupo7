@@ -57,7 +57,8 @@ El problema que se logró identificar es que al momento de completarse el servic
   
 
 - **Solución:**
-Mediante la implemetnación del patrón Asynchronous Request-Reply , se puede asignar un token distintivo a cada tipo de usuario a la hora de logearse en la paltaforma , y de esa forma restrtingir el acceso a cada tipo de usuario.
+Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan seguir navegando a traves de la aplicación sin que se vean forzados a esperar la respueta inmediata de la pasarela de pago y en su lugar lo reciba mediante una notificación . De esta forma maximiza la posibilidad de que el cliente siga contratando servicios mediante la app mientras menos tiempo se le retenga.
+
 **Casos de aplcación :**
 
 
