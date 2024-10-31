@@ -71,6 +71,7 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 
 ### **Casos de aplcación :**
 
+### **Aplicación en el trabajo de Grupo :**
 
 
 
