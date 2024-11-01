@@ -238,17 +238,15 @@ https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/web-a
 
 ![2](https://drive.google.com/uc?export=view&id=11TUxiC88bdVUA4OWD2Mu-l-OQfY3-ToV)
 
-[Imagen 2]
-
 Paso 3: Crear el stamp.
 
 Es importante asignar la región más cercana, en este caso Brazil South.
 
-[Imagen 3]
+![3](https://drive.google.com/uc?export=view&id=1Zb1tBO9XGaVhDoxMV5Zx-S9EiVdUOvuj)
 
 Paso 4: Visualizar el grupo de recursos del stamp2
 
-[Imagen 4]
+![4](https://drive.google.com/uc?export=view&id=1S7Aun5w8lvdt36fzwBEZXrbyZNdp_wfp)
 
 Tenemos la instacia de la aplicación (el stamp)
 
@@ -258,27 +256,27 @@ Tenemos la instacia de la aplicación (el stamp)
 4. El servidor
 5. El servicio de la aplicación.
 
-[Imagen 5]
+![5](https://drive.google.com/uc?export=view&id=1rnea5pD_jsEn65GrW1MhdheE-jbiAFfH)
 
 Creamos otro stamp:
 
-[Imagen 6]
+![6](https://drive.google.com/uc?export=view&id=1YjUfMosM4nBidthGNZ7xFdBGn_sdqYWI)
 
 Paso 5: Visualizar el dominio predeterminado del stamp.
 
 Click en App Service y luego a examinar, tanto en el Stamp2 como en el Stamp3.
 
-[Imagen 7]
+![7](https://drive.google.com/uc?export=view&id=1ULk1RDxqKW_GoX3-s6uv-4nmXepw4r2S)
 
-[Imagen 8]
+![8](https://drive.google.com/uc?export=view&id=1oJJhTAZLepfib3IkxlmPh7gx97FLgvwh)
 
 Stamp2:
 
-[Imagen 9]
+![9](https://drive.google.com/uc?export=view&id=1WiKWFN3J6uYrkjsqecvCiMahT4wToWF_)
 
 Stamp3:
 
-[Imagen 10]
+![10](https://drive.google.com/uc?export=view&id=1hXnVWHEItPdbE9VoyMzNJyaSPq1LmUsa)
 
 Visualmente las páginas son identicas porque se ejecutan a partir de la misma plantilla proporcionada por Azure. No obstante, la diferencia está en el link porque está alojada a un “App service” y “BD SQL” diferente. Por lo que este es uno de los escenarios de los patrones de stamp que puede ayudar a resolver. Podemos segmentar los clientes por cada stamp creado, variando así los requerimientos que debe cumplir la app para satisfacer sus necesidades. Por ejemplo, en Office 365 tienen una diferencia de URL para cada cliente que se una a su servicio. 
 
@@ -297,38 +295,39 @@ Me base del link para registrarlo: https://learn.microsoft.com/es-mx/azure/azure
 
 En suscripción, nos dirigimos a “Proveedores y recursos”.
 
-[Imagen 11]
+![11](https://drive.google.com/uc?export=view&id=1gFRPQgXn2WZV_d6uo5j7GNVYQtIHLGBW)
 
 Buscamos, seleccionamos el proveedor y lo registramos:
 
-[Imagen 12]
+![12](https://drive.google.com/uc?export=view&id=1dmgfBIcLY8cpRZXadmDRf5lCD-QTvwOa)
 
 Paso 7: Agregar puerta principal.
 
 En la sección “Más servicios”, buscamos “puerta principal”:
 
-[Imagen 13]
+![13](https://drive.google.com/uc?export=view&id=1KV5mUySQ1c1w5pvwcpxLyrKPwTU0JFLv)
 
-[Imagen 14]
+![14](https://drive.google.com/uc?export=view&id=1y-DHutQPAviIyLjFg5UVeKJWVRitA3rC)
 
 Como es una demo, seleccionamos el siguiente plan:
 
-[Imagen 15]
+![15](https://drive.google.com/uc?export=view&id=1pBZej2yUdgGtkfbzi5GIynf7BYa2Mgzi)
 
 Asignamos un nombre al grupo de stamps.
 
-[Imagen 16]
+![16](https://drive.google.com/uc?export=view&id=1NxW1EPGJAmrbcjAFqPW7AuS0tcg7w3Jt)
 
 Paso 8: Definir Frontend.
 
-[Imagen 17]
+![17](https://drive.google.com/uc?export=view&id=1PKomR3lLicHCWU-SEvhVbxJs0t8IaDjD)
 
-[Imagen 18]
+![18](https://drive.google.com/uc?export=view&id=1JLvzww1gtWz_vja54Nxjpg92XRhZtZ1i)
 
 Paso 9: Definir Backend.
 
-[Imagen 19]
-[Imagen 20]
+![19](https://drive.google.com/uc?export=view&id=1W64rj5d06Vpu17FlTbHZ2jNafjL7XNBU)
+
+![20](https://drive.google.com/uc?export=view&id=1Firqa5_lRVFf74T_pbQXxRvu1Vo1rnxx)
 
 Seleccionamos el link del stamp2 (hipervinculo que vimos en el paso 5) y luego el peso lo ponemos a 100 (Asignar peso a diferentes origenes para distribuir el tráfico, en este caso ambos tiene un peso equivalente). Click en agregar.
 
@@ -336,61 +335,61 @@ Del mismo modo, se creará otro backendpoolpt02, pero utilizando el hipervíncul
 
 Paso 10: Definir las reglas de enrutamiento.
 
-[Imagen 21]
+![21](https://drive.google.com/uc?export=view&id=1LKMl7CRhw_ihlm1mJCpb0ExvCibAJz2w)
 
 Seleccionamos “HTTP solo”, pero para definir el stamp02routing lo definimos con “HTTPs solo”. El dominio frontend es el link que se utilizará para llamar a los dominios stamp2 y stamp3.
 
-[Imagen 22]
+![22](https://drive.google.com/uc?export=view&id=1CBKXv-f2ph2-FVe__RWtdmCZannG9hnW)
 
-[Imagen 23]
+![23](https://drive.google.com/uc?export=view&id=1eP7eEGWTD7naINsreiybIJxp6Ek5N7tU)
 
 Agregamos el link del stamp2.
 
-[Imagen 24]
+![24](https://drive.google.com/uc?export=view&id=11r3HD5Z3suV4VpgomRJ51i2JxfZHwNk-)
 
 Hacemos lo mismo con stamp02routing , agregamos el link del stamp3.
 
-[Imagen 25]
+![25](https://drive.google.com/uc?export=view&id=1k9dEMut8N6g4Z6z_OyULHolziUG4Vau8)
 
 Click a “Crear”, luego al “Ir al curso”.
 
-[Imagen 26]
+![26](https://drive.google.com/uc?export=view&id=1Q5234WqKaja0K_bVJsdPB-tYphjHmUfC)
 
 Copiamos el hosts princpal.
 
-[Imagen 27]
+![27](https://drive.google.com/uc?export=view&id=18J3u5IvnqLKLjYrTtJInB0MpqytwopuO)
 
 A continuación, se explorará en la versión http y https del mismo URL.
 
-[Imagen 28]
+![28](https://drive.google.com/uc?export=view&id=1vpdzHwcHUxWf2grI14KzGSh9DANCSXId)
 
 Ahora cuando le damos enter y luego lo actualizamos, saldrá el stamp2:
 
-[Imagen 29]
+![29](https://drive.google.com/uc?export=view&id=1ddYB7TS873ipif6ifC4BEU6OJIrPEsDT)
 
 Pero si lo ponemos en http:
 
-[Imagen 30]
+![30](https://drive.google.com/uc?export=view&id=1RzaSn_vwfNhX6DJ1xgYmdkhRGU9CVNTB)
 
 y luego lo actualizamos, saldrá el stamp3:
 
-[Imagen 31]
+![31](https://drive.google.com/uc?export=view&id=10pSKz7DiHwW6aoVVoI84limk_QDDPSQC)
 
 Como se observa, la URL redirige a uno de los stamp, lo cual demuestra que la configuración de enrutamiento está bien y redirigirá el tráfico a diferentes stamp según el protocolo (Http o Https).
 
 No obstante, existe configuraciones de enrutamiento más complejas, lo cual se utiliza “Configuración de motor de reglas” para vincular a las reglas de enrutamiento.
 
-[Imagen 32]
+![32](https://drive.google.com/uc?export=view&id=1ab_FHND20meeh57xHriCqZmCTEEQhXeM)
 
-[Imagen 33]
+![33](https://drive.google.com/uc?export=view&id=1MbEXIQIHg6-kUQ6SjtL36I9CPGVkjR2c)
 
-[Imagen 34]
+![34](https://drive.google.com/uc?export=view&id=1TEwqT9Iz0Mfl5zD4wP9_9q7ESpYSJOjc)
 
-[Imagen 35]
+![35](https://drive.google.com/uc?export=view&id=1UZPh2qJuJT2-JT4UGFxVyPxnDa4ImlYm)
 
-[Imagen 36]
+![36](https://drive.google.com/uc?export=view&id=1JXGzaHJW0qjRKyLLjcU6icNDEbqv9ie5)
 
-[Imagen 37]
+![37](https://drive.google.com/uc?export=view&id=1FerT2CAxl5vJgLCnfLgpFQU9hqJ-xFIc)
 
 La puerta de entrada se reproduce en la URL única que todos los usuarios accederán para acceder a la aplicación y en función a la configuración de enrutamiento va asignar a diferentes stamps, con un “app service” y un “SQL DB” propio. 
 
@@ -411,7 +410,7 @@ Como se aprecia en el código rescatado del link: https://www.youtube.com/watch?
 
 En cada región, incluye diferentes recursos a implementar en un servicio en particular.
 
-[Imagen 38]
+![38](https://drive.google.com/uc?export=view&id=1P1F3MvMHm9Su2uZhn5Qk6g3K5D1YPRad)
 
 ### Fuentes:
 
