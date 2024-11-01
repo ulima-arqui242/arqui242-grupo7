@@ -186,23 +186,240 @@ A continuación se presentará un video de la demo que explicará más a detalle
 
 Si se aloja una única instancia de la aplicación en la nube, existe la posibilidad de que presente limitaciones en la escabilidad. Es decir, una vez que la aplicación llegue al tope en usuarios conectados al mismo tiempo o el número de recursos utilizados al máximo, el rendimiento de la aplicación caerá notablemente. Además, se plantea el problema en la segmentación de los clientes. Por ejemplo, si un cliente utiliza la aplicación con frecuencia y depende de los recursos de esta requerira que la tasa de actualizaciones sea la mínima y solo si es una versión estable; no obstante, si se tiene un cliente la cual no depende de forma crítica de la aplicación entonces tolerará de mejor formas estas actualizaciones. 
 
+1. Escalabilidad
+    
+    Hay arquitecturas que tienen una opción de escalar, pero no en múltiples instancias. Haciendo una analogía, es como tener un local para un restaurante y tener solo la posibilidad de hacerlo más grande, pero no crear multiples surcursales dispersas en todo Lima. En otras palabras, si solo tenemos las instancias BD SQL y la aplicación podemos obtener recursos mayores, pero llegará el momento que alcanzará el tope del plan que ofrece Azure para estos recursos.
+    
+2. Manejar instancias de inquilinos únicos y múltiples
+    
+    Ejemplo, se tiene dos tipos de clientes en un marketplace, un grupo de vendedores que utiliza la página web con mayor frecuencia (actualizando su contenido, respondiendo comentarios, etc). Esto consume recursos con mayor fuerza, pero se tiene otro grupo de vendedores que ocasionalmente utiliza la aplicación. Segmentar la aplicación en multiples instancias garantiza que la carga de trabajo que exija otros clientes no relentice la de otros. La arquitectura mostrada en la imagen solo admite instancias multiinquilino en donde todos los datos se almacenan en una sola instancia.
+    
+3. Restricciones geográficas
+    
+    Algunas industrias como las financieras deben cumplir con normas que exigen tener los datos dentro de las frontares del país y la arquitectura está alojada en Brasil del sur.
+
 ### Solución
 
-Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad horizontal se vuelve más estable ya que se puede crear instacias de la aplicación conocidos como stamps, las cuales se pueden hacer cambios de forma independiente. Es como crear pequeños clones de la aplicación para asignarlo a un tipo de cliente en particular. Cada instancia tiene su propia configuración y tasa de actualizaciones. 
+Si bien, la escabilidad hacia arriba podría ser una solución, la escabilidad horizontal se vuelve más estable ya que se puede crear instacias de la aplicación conocidos como stamps, las cuales se pueden hacer cambios de forma independiente. Es como crear pequeños clones de la aplicación para asignarlo a un tipo de cliente en particular. Cada instancia tiene su propia configuración y tasa de actualizaciones.
 
 ### Casos de aplicación
 
-1. Cuando se tiene varios grupos de clientes segmentados en todo el país, en donde se pueden conectar en la instancia de la nube más cercana para evitar problemas de conectivadad.
-2. Cuando se requiera abordar una mayor demanda en la aplicación, en vez de comprar un servicio en la nube más grande, solo se requerira manejar varias instancia de la aplicación para que cada grupo pueda segmentar los clientes.
+¿Cuándo debemos utilizar el Deployment Stamp Pattern?
+
+1. Cuando la aplicación está cerca de alcanzar al límite de escalabilidad vertical. Por ejemplo, a pesar de estar utilizando el plan más robusto de una BD, aún se requiere más espacio para almacenar los datos.
+2. Cuando se necesita almacenar los datos de los clientes en un lugar específico. 
+3. Cuando un grupo de clientes necesitan un versión de la aplicación diferente a los demás clientes.
+4. Cuando se quiere lograr una resistencia en las interrupciones. Los stamps trabajan de manera individual, por lo que si un stamp está inactivo otros no serán afectados.
+
+¿Cuándo no utilizarlo?
+
+1. Cuando tenemos un sistema simple o aún le falta por escalar bastante de manera vertical. Por ejemplo, se está utilizando el plan gratuito de una BD y tiene a su disposición más planes que podrían hacer más robusto la BD.
+2. Cuando necesitamos que todos los datos estén en todos los stamps.
+3. Necesitamos escalar componentes de la arquitectura y dejar otros componentes sin stamp.
+4. Si tenemos una página web stática. Por ejemplo, la interfaz no varía según el tipo de usuario que se registre.
 
 ### Aplicación en el grupo
 
 Se podría segmentar los clientes por vendedores pequeños, medianos y grandes. Asi cuando los clientes que requieran más recursos de la aplicación, se le brindará un servicio más estable en el proveedor de la nube y su propio contendor. Un contenedor permite ejecutar la aplicación de manera aislada, junto con sus dependencias, sin necesidad de depender del principal. Por ejemplo, se puede tener un contendor para backend y otro para el frontend, ambos corriendo al mismo tiempo utilizando Docker. Además, se puede utilizar Docker Swarm para gestionar la implementación de esos contenedores.
 
 3. **Desarrollo de Código y Demo**:
-   - Implemente una solución que utilice el patrón seleccionado en un caso real o en un escenario de ejemplo bien definido.
-   - Documente el caso real y detalle el proceso de implementación, asegurándose de describir cada paso realizado.
-   - (Opcional) Prepare una demo en video donde muestre el funcionamiento de la implementación, explicando brevemente su funcionamiento.
+
+A continuación, se trabajará con una plantilla propia de Azure en donde se verá la creación de los stamps, configuraciones de enrutamiento de tráfico y cómo realizar stamps de manera automática.
+
+Paso 1: Suscripción de Azure 1
+
+Para crearlo se debe dar click a la suscripción, y elegir la opción “actualizar suscripción” (Es una advertencia que sale en la parte superior).
+
+[Imagen 1]
+
+Paso 2: Entrar a link y click en Deploy to Azure
+
+https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/web-app-sql-database/
+
+[Imagen 2]
+
+Paso 3: Crear el stamp.
+
+Es importante asignar la región más cercana, en este caso Brazil South.
+
+[Imagen 3]
+
+Paso 4: Visualizar el grupo de recursos del stamp2
+
+[Imagen 4]
+
+Tenemos la instacia de la aplicación (el stamp)
+
+1. Grupo de acciones
+2. El plan de servicio de la aplicación
+3. La base de datos
+4. El servidor
+5. El servicio de la aplicación.
+
+[Imagen 5]
+
+Creamos otro stamp:
+
+[Imagen 6]
+
+Paso 5: Visualizar el dominio predeterminado del stamp.
+
+Click en App Service y luego a examinar, tanto en el Stamp2 como en el Stamp3.
+
+[Imagen 7]
+
+[Imagen 8]
+
+Stamp2:
+
+[Imagen 9]
+
+Stamp3:
+
+[Imagen 10]
+
+Visualmente las páginas son identicas porque se ejecutan a partir de la misma plantilla proporcionada por Azure. No obstante, la diferencia está en el link porque está alojada a un “App service” y “BD SQL” diferente. Por lo que este es uno de los escenarios de los patrones de stamp que puede ayudar a resolver. Podemos segmentar los clientes por cada stamp creado, variando así los requerimientos que debe cumplir la app para satisfacer sus necesidades. Por ejemplo, en Office 365 tienen una diferencia de URL para cada cliente que se una a su servicio. 
+
+¿Qué se hace en concreto?
+
+Se puede definir si un stamp soporta:
+
+1. Multiinquilino
+2. Inquilino único
+
+En donde cada stamp tiene una pontencia informática diferente, la cual cada una tendrá su propia URL para iniciar sesión. Pero puede llegar la situación en la que se necesite de una URL donde todos los tipos de clientes utilicen al mismo tiempo y luego administrar ese tráfico para enrutar a cada cliente o inquilino a su respectivo stamp. Es ahí en donde entra el enrutamiento de tráfico, lo cual se hará en los siguiente pasos.
+
+Paso 6: Registrar un proveedor en la suscripción.
+
+Me base del link para registrarlo: https://learn.microsoft.com/es-mx/azure/azure-resource-manager/management/resource-providers-and-types?WT.mc_id=Portal-Microsoft_Azure_AFDX
+
+En suscripción, nos dirigimos a “Proveedores y recursos”.
+
+[Imagen 11]
+
+Buscamos, seleccionamos el proveedor y lo registramos:
+
+[Imagen 12]
+
+Paso 7: Agregar puerta principal.
+
+En la sección “Más servicios”, buscamos “puerta principal”:
+
+[Imagen 13]
+
+[Imagen 14]
+
+Como es una demo, seleccionamos el siguiente plan:
+
+[Imagen 15]
+
+Asignamos un nombre al grupo de stamps.
+
+[Imagen 16]
+
+Paso 8: Definir Frontend.
+
+[Imagen 17]
+
+[Imagen 18]
+
+Paso 9: Definir Backend.
+
+[Imagen 19]
+[Imagen 20]
+
+Seleccionamos el link del stamp2 (hipervinculo que vimos en el paso 5) y luego el peso lo ponemos a 100 (Asignar peso a diferentes origenes para distribuir el tráfico, en este caso ambos tiene un peso equivalente). Click en agregar.
+
+Del mismo modo, se creará otro backendpoolpt02, pero utilizando el hipervínculo del stamp3.
+
+Paso 10: Definir las reglas de enrutamiento.
+
+[Imagen 21]
+
+Seleccionamos “HTTP solo”, pero para definir el stamp02routing lo definimos con “HTTPs solo”. El dominio frontend es el link que se utilizará para llamar a los dominios stamp2 y stamp3.
+
+[Imagen 22]
+
+[Imagen 23]
+
+Agregamos el link del stamp2.
+
+[Imagen 24]
+
+Hacemos lo mismo con stamp02routing , agregamos el link del stamp3.
+
+[Imagen 25]
+
+Click a “Crear”, luego al “Ir al curso”.
+
+[Imagen 26]
+
+Copiamos el hosts princpal.
+
+[Imagen 27]
+
+A continuación, se explorará en la versión http y https del mismo URL.
+
+[Imagen 28]
+
+Ahora cuando le damos enter y luego lo actualizamos, saldrá el stamp2:
+
+[Imagen 29]
+
+Pero si lo ponemos en http:
+
+[Imagen 30]
+
+y luego lo actualizamos, saldrá el stamp3:
+
+[Imagen 31]
+
+Como se observa, la URL redirige a uno de los stamp, lo cual demuestra que la configuración de enrutamiento está bien y redirigirá el tráfico a diferentes stamp según el protocolo (Http o Https).
+
+No obstante, existe configuraciones de enrutamiento más complejas, lo cual se utiliza “Configuración de motor de reglas” para vincular a las reglas de enrutamiento.
+
+[Imagen 32]
+
+[Imagen 33]
+
+[Imagen 34]
+
+[Imagen 35]
+
+[Imagen 36]
+
+[Imagen 37]
+
+La puerta de entrada se reproduce en la URL única que todos los usuarios accederán para acceder a la aplicación y en función a la configuración de enrutamiento va asignar a diferentes stamps, con un “app service” y un “SQL DB” propio. 
+
+Por lo cual, hay dos opciones:
+
+1. Conformarse a que dos tipos de clientes usen diferentes URLs para acceder a sus stamp.
+2. Todos los clientes usarán un solo tipo de URL para acceder a su propio stamp en base a las configuraciones de enrutamiento que se especifique en el Azure Front Door.
+
+Ahora, ¿Qué pasa si queremos implementar cientos de stamps?
+
+Entonces, no conviene hacerlo manualmente. Aprovechandose del administrador de implementación en Azure, se escoge una plantilla de topología y una de implementación con sus respectivos parámetros.
+
+La topología define los recursos a utilizar y en dónde.
+
+La implementación define cuándo se aplicarán estos cambios y las condiciones que se debe cumplir para proceder con la creación de stamps.
+
+Como se aprecia en el código rescatado del link: https://www.youtube.com/watch?v=8uaWoKkyIWk
+
+En cada región, incluye diferentes recursos a implementar en un servicio en particular.
+
+[Imagen 38]
+
+### Fuentes:
+
+https://www.youtube.com/watch?v=8uaWoKkyIWk
+
+https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/web-app-sql-database/
+
+https://learn.microsoft.com/es-mx/azure/azure-resource-manager/management/resource-providers-and-types?WT.mc_id=Portal-Microsoft_Azure_AFDX
+
+https://learn.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
 
 4. **Entrega**:
    - Sobre su página personal en el repositorio de Github del grupo debe agregar una sección titulada "Patrones Cloud".
