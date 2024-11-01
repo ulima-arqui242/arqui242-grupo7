@@ -152,7 +152,7 @@ Terminada la instalación, se procederá a explicar la metodología del proyecto
 
 ![Resultados TextRank](https://drive.google.com/uc?export=view&id=1PrBN-2p21D23oF1zh_wMcNWZUxBO_U10)
 
-## Video de la dema
+## Video de la demo
 
 A continuación se presentará un video de la demo que explicará más a detalle el trabajo descrito.
 [Video individual](https://drive.google.com/file/d/1yANwjCY09ROsNuj49xsa3Xe3aGUbfR_N/view?usp=sharing)
@@ -230,7 +230,7 @@ Paso 1: Suscripción de Azure 1
 
 Para crearlo se debe dar click a la suscripción, y elegir la opción “actualizar suscripción” (Es una advertencia que sale en la parte superior).
 
-[Imagen 1]
+![uno](https://drive.google.com/uc?export=view&id=1U9Tv6Ctr4uovYAJ9HT3sxogkClDUcorC)
 
 Paso 2: Entrar a link y click en Deploy to Azure
 
