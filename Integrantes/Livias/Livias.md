@@ -230,11 +230,13 @@ Paso 1: Suscripción de Azure 1
 
 Para crearlo se debe dar click a la suscripción, y elegir la opción “actualizar suscripción” (Es una advertencia que sale en la parte superior).
 
-![uno](https://drive.google.com/uc?export=view&id=1U9Tv6Ctr4uovYAJ9HT3sxogkClDUcorC)
+![1](https://drive.google.com/uc?export=view&id=1U9Tv6Ctr4uovYAJ9HT3sxogkClDUcorC)
 
 Paso 2: Entrar a link y click en Deploy to Azure
 
 https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/web-app-sql-database/
+
+![2](https://drive.google.com/uc?export=view&id=11TUxiC88bdVUA4OWD2Mu-l-OQfY3-ToV)
 
 [Imagen 2]
 
