@@ -1,4 +1,4 @@
-# George Zuñiga
+# George Zuñiga Mariño
 
 ### Experiencia:
 Cuento con experiencia en codigo de bajo nivel ,ademas de herramientas digitales aplicadas a la realidad virtual , y con desarrollo en antiguos proyectos experimentales para sitios web. 
