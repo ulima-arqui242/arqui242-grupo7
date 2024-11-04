@@ -94,6 +94,95 @@ Esto se refuerza aún más cuando de peticiones sincronas se tratan, aunque si b
 El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
 Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
 
+
+### **Desarrollo de código :**
+
+const accessToken = "apis-token-11100.fMZ7XW7D39jYNrzE92p9YH2OjsNCXhD4";
+const apidniUrl = 'https://api.apis.net.pe/v2/reniec/dni';
+var estadoS ;
+var docu;
+// API de validación de DNI (API 2)
+app.post('/api/vdni', async (req, res) => {
+  const { dni } = req.body;
+
+  try {
+    // Responder inicialmente con 202 y la URL de consulta de estado
+    res.status(202).json({ 
+      message: 'Solicitud recibida y en proceso'
+    });
+
+    // Notificar a la API de estado que el DNI está "procesando"
+    await axios.post(`http://localhost:3000/api/estado/${dni}`, {
+      estado: false
+    });
+
+    // Llamar a la API de terceros para validar el DNI
+    const response = await axios.get(`${apidniUrl}?numero=${dni}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    // Extraer solo el campo numeroDocumento de la respuesta
+    const { numeroDocumento } = response.data;
+
+    // Verificar que el número de documento coincida con el DNI proporcionado
+    if (numeroDocumento === dni) {
+      // Notificar a la API de estado que el DNI está "listo"
+      await axios.post(`http://localhost:3000/api/estado/${dni}`, {
+        estado: true,
+        dni: dni 
+        
+      });
+    } else {
+      throw new Error('El DNI no coincide con el número de documento devuelto');
+    }
+
+  } catch (err) {
+    console.error('Error al procesar la solicitud:', err.message);
+    // Notificar a la API de estado que hubo un error
+    await axios.post(`http://localhost:3000/api/estado/${dni}`, {
+      estado: 'error',
+      mensaje: err.message
+    });
+  }
+});
+
+// API de estado (API 4)
+// Endpoint para consultar el estado de un DNI
+app.get('/api/estado/:dni', (req, res) => {
+  const { dni } = req.params;
+
+  if (estadoS == true && docu == dni ) {
+    // Si el estado es 1, devolverlo
+    res.json({ dni, estado: estados[dni] });
+    estadoS =false
+  } else {
+    // Si el DNI no se encuentra, devolver un error 404
+    res.status(404).json({ error: 'Estado no encontrado para el DNI especificado' });
+    
+  }
+});
+
+// Endpoint para actualizar el estado de un DNI
+app.post('/api/estado/:dni', (req, res) => {
+  const { estado } = req.body;
+  const { dni } = req.body;
+
+
+   // Actualizar el estado del DNI e
+  if (estado == true){
+    
+    estadoS = true; 
+    docu = dni,
+    res.json({ message: 'dni valido'});
+  }
+ 
+ 
+});
+
+
+
 ## Demo Video
 
 https://drive.google.com/file/d/1v4ayTE6-QU_Esuu5Ul7mewtyg0cLE0gO/view?usp=sharing
