@@ -97,22 +97,22 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 
 ### **Desarrollo de código :**
 
-** Variables Globales**
+#### ** Variables Globales**
 ![Variables Globales](Globales.png)
 
 
-** API validar DNI**
+####  ** API validar DNI**
 ![Variables Globales](apiback.png)
 
 
-** API Estado validar GET**
+####  ** API Estado validar GET**
 ![Variables Globales](apiestadoGET.png)
 
-** API Estado validar POST**
+####  ** API Estado validar POST**
 ![Variables Globales](apiestadoPOST.png)
 
 
-** Variables Globales**
+####  ** Variables Globales**
 ![foto](https://drive.google.com/file/d/1vcbcpC35dEgOmZGqwNAAGIKP4BugLG_y/view?usp=drive_link)
 
 
