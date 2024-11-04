@@ -149,4 +149,57 @@ Apache Kafka es una plataforma de streaming distribuida y de código abierto des
   - **Ecosistema**: Cuenta con un ecosistema más amplio y una comunidad activa que aporta mejoras y soporte continuo.
 
 ---
+
+# Patrón Cloud a Implementar: SideCar
+
+Para implementar un sistema de soporte al usuario robusto y eficiente en la plataforma “A tu Puerta”, se seleccionó el **patrón Sidecar**. Este patrón permite que cada funcionalidad específica, como el soporte al usuario, funcione de manera autónoma y aislada del resto del sistema. Esto facilita tanto la escalabilidad como el mantenimiento, además de mejorar la integración de Kafka para la gestión de eventos en tiempo real. A continuación, se detalla cómo el patrón Sidecar responde a las necesidades del sistema.
+
+---
+
+## Problema
+
+En el desarrollo de la plataforma “A tu Puerta”, el módulo de asistencia y soporte enfrenta varios retos específicos. Este módulo debe integrarse de manera eficiente en el sistema sin afectar el rendimiento de otros servicios y garantizar una atención rápida y escalable para los usuarios. A continuación, se detallan los problemas principales que aborda el patrón Sidecar:
+
+1. **Aislamiento de Funcionalidades**: El módulo de soporte necesita estar aislado de los demás servicios para evitar que su carga afecte a otros módulos de la plataforma, asegurando una operación estable y autónoma.
+
+2. **Escalabilidad de Recursos**: Durante los períodos de alta demanda, es fundamental que el sistema pueda escalar el soporte sin necesidad de aumentar recursos en toda la plataforma, optimizando así el uso de recursos.
+
+3. **Manejo de Eventos en Tiempo Real**: Con la implementación de Kafka, el sistema requiere un patrón que permita la comunicación en tiempo real de forma simple y eficaz, adaptándose a los flujos dinámicos del soporte al usuario.
+
+4. **Facilidad de Mantenimiento y Actualización**: El módulo de soporte necesitará actualizaciones frecuentes y una arquitectura que permita realizar estos cambios sin interferir con la operación del resto de la plataforma.
+
+5. **Adaptación a Flujos Cambiantes**: La demanda y naturaleza de las consultas de los usuarios pueden variar, por lo que se requiere una arquitectura flexible que pueda adaptarse a estos cambios sin afectar al resto del sistema.
+
+---
+
+## Solución
+
+El patrón **Sidecar** se ajusta a los requisitos del módulo de asistencia y soporte en la plataforma “A tu Puerta” al permitir la ejecución de sus funcionalidades en un contenedor separado. Este enfoque no solo asegura la independencia del módulo, sino que facilita la escalabilidad, la integración con Kafka y el mantenimiento sin interrupciones. A continuación, se presentan los beneficios específicos que ofrece Sidecar en este contexto:
+
+1. **Aislamiento Mediante Sidecar**: Al ejecutar el módulo de soporte en un contenedor separado, Sidecar asegura que las operaciones del soporte no interfieran con otros módulos, manteniendo la estabilidad general del sistema.
+
+2. **Escalabilidad Independiente**: Sidecar permite escalar el módulo de soporte sin necesidad de asignar recursos adicionales al resto de la plataforma, asegurando una respuesta rápida en momentos de alta demanda.
+
+3. **Integración Optimizada con Kafka**: Este patrón facilita la comunicación basada en eventos mediante Kafka, gestionando eficientemente los mensajes en tiempo real y ofreciendo una experiencia de usuario fluida en la interacción con el soporte.
+
+4. **Mantenimiento Simplificado**: La arquitectura independiente de Sidecar permite realizar mejoras y actualizaciones en el módulo de soporte sin necesidad de interrumpir otros servicios, garantizando así la continuidad operativa.
+
+5. **Adaptación a Cambios**: Sidecar brinda flexibilidad para modificar el módulo de soporte según nuevos flujos o necesidades sin que el resto del sistema se vea afectado, facilitando la evolución de la plataforma.
+
+---
+
+## Casos de Aplicación
+
+El patrón Sidecar ha sido seleccionado específicamente para optimizar el rendimiento y la experiencia de usuario en el módulo de soporte. A continuación se describen algunos de los principales casos de aplicación en los que este patrón beneficiará a la plataforma “A tu Puerta”:
+
+1. **Escalabilidad en Picos de Demanda**: En momentos de alta demanda, como durante eventos o promociones, el patrón Sidecar permite que el módulo de soporte escale sin afectar a otros servicios, asegurando así que todos los usuarios reciban asistencia oportuna.
+
+2. **Actualización Continua del Módulo de Soporte**: Con Sidecar, el equipo de desarrollo puede aplicar mejoras o parches de seguridad en el módulo de soporte sin necesidad de desconectar o afectar el servicio para otros módulos de la plataforma.
+
+3. **Comunicación en Tiempo Real**: Sidecar, en conjunto con Kafka, permite que el soporte al usuario maneje eventos y consultas en tiempo real, garantizando una atención eficiente y una comunicación fluida entre el soporte y los usuarios.
+
+4. **Experiencia de Usuario Mejorada**: Gracias al aislamiento del módulo de soporte, se garantiza una interacción rápida y estable para los usuarios, quienes pueden recibir asistencia sin experimentar lentitud o interrupciones en el resto de la plataforma.
+
+5. **Adaptabilidad a Cambios de Escenario**: El patrón Sidecar permite modificar los flujos de trabajo del módulo de soporte sin impactar la infraestructura general, permitiendo que la plataforma evolucione y se adapte a nuevos requerimientos de los usuarios.
+
 [Regresar al índice](../../README.md)
