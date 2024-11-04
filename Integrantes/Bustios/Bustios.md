@@ -98,6 +98,16 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 ### **Desarrollo de código :**
 
 
+![Variables Globales](Globales.png)
+
+
+![Variables Globales](apiback.png)
+
+![Variables Globales](apiestadoGET.png)
+
+![Variables Globales](apiestadoPOST.png)
+
+
 ** Variables Globales**
 ![foto](https://drive.google.com/file/d/1vcbcpC35dEgOmZGqwNAAGIKP4BugLG_y/view?usp=drive_link)
 
