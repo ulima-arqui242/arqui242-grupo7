@@ -1,7 +1,5 @@
 # Aarón Livias
 
-![Video](https://drive.google.com/uc?export=download&id=1G1gYgc_txEx2_Bqad5ZhZHJH7EgwLLER)
-
 ![Aarón Livias](https://media.licdn.com/dms/image/v2/D4E03AQGd6fPm4Jv6OA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703021391954?e=1729728000&v=beta&t=a5BQTeZpRUQChEQEBUOQGYtUZSlD-jUI57po782suKA)
 ### Experiencia:
 Mi experiencia en desarrollo de software se ve presente en los trabajos personales realizados en las vacaciones. Últimamente eh desarrollado un proyecto de web scraping a distintas páginas web para armar una base de datos propia. Por otro lado, me enfoqué en proyectos relacionado a manejar páginas wed que se centren a cumplir ciertos requisitos de seguridad.
