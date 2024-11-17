@@ -41,7 +41,6 @@ Filtros avanzados: Permite aplicar filtros para concentrarse en paquetes especí
 Análisis profundo: Wireshark ofrece un análisis detallado de los protocolos de red y ayuda a los profesionales a entender el tráfico de red hasta en el nivel más bajo.
 Aplicación práctica: Wireshark se utiliza a menudo para monitorear redes en busca de anomalías o ataques activos. Por ejemplo, en un entorno empresarial, un administrador de red puede detectar intentos de intrusión y verificar la seguridad del sistema.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Casos de Uso del Hacking Ético
 #### *Pruebas de Seguridad en Aplicaciones Web:* 
@@ -126,7 +125,7 @@ El Ambassador Pattern resuelve este problema al:
 
 ## ¿Cómo funciona el Ambassador Pattern?
 
-El patrón se basa en desplegar un contenedor o proceso adicional que actúa como el embajador junto al servicio que se quiere proteger y gestionar. A menudo, en entornos basados en contenedores, como **Kubernetes**, se implementa como un **sidecar container** que se despliega junto al servicio principal dentro del mismo pod.
+El patrón se basa en desplegar un contenedor o proceso adicional que actúa como el embajador junto al servicio que se quiere proteger y gestionar. A menudo, en entornos basados en contenedores, como Kubernetes, se implementa como un sidecar container que se despliega junto al servicio principal dentro del mismo pod.
 
 ### Ejemplo de flujo de trabajo:
 
