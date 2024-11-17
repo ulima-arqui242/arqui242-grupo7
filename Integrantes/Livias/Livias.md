@@ -447,7 +447,7 @@ Además, como en un solo proyecto se tiene frontend y backned, entonces se detal
 
 Como se está utilizando build para encenderlo, lo detallamos en el proyecto:
 
-![41](https://drive.google.com/uc?export=view&id=1KAZTGXg_Z-docqqV9hkUNJTnC8T9n5fL)
+![41](https://drive.google.com/uc?export=view&id=1AzzMcFdibaAaEl9rNKTjYQyVdXbeBJgy)
 
 ### Fuentes:
 
