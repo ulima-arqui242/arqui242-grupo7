@@ -443,6 +443,12 @@ https://equipo-arquitectura-software.vercel.app
 
 Además, como en un solo proyecto se tiene frontend y backned, entonces se detalla que solo queremos encender el frontend.
 
+![40](https://drive.google.com/uc?export=view&id=1KAZTGXg_Z-docqqV9hkUNJTnC8T9n5fL)
+
+Como se está utilizando build para encenderlo, lo detallamos en el proyecto:
+
+![41](https://drive.google.com/uc?export=view&id=1KAZTGXg_Z-docqqV9hkUNJTnC8T9n5fL)
+
 ### Fuentes:
 
 [https://vercel.com/templates/next.js/blue-green-deployments-vercel](https://vercel.com/guides/blue_green_deployments_on_vercel)
