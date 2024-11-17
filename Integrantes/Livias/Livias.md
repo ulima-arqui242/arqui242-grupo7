@@ -18,7 +18,8 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
 
 ![Mercado Libre](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
-
+https://drive.google.com/file/d/1f6EP291ayQ9Y4UkxGLNXfGoIGs6w8QHs/view?usp=sharing
+https://drive.google.com/uc?export=view&id=1f6EP291ayQ9Y4UkxGLNXfGoIGs6w8QHs
 ## Modelos de simlitud de textos
 
 ### Desarrollo conceptual
@@ -422,10 +423,29 @@ https://learn.microsoft.com/es-mx/azure/azure-resource-manager/management/resour
 
 https://learn.microsoft.com/en-us/azure/architecture/patterns/deployment-stamp
 
-4. **Entrega**:
-   - Sobre su página personal en el repositorio de Github del grupo debe agregar una sección titulada "Patrones Cloud".
-   - Puede desarrollar el código en el mismo repo o en un repositorio externo.
-   - Si realiza el video, súbalo a una plataforma de su elección (YouTube, Vimeo, etc.) y comparta el enlace en la documentación.
+# Tema elegido: Estrategias de Despliegue Seguro (Blue-Green)
+
+### Problema
+
+Diversos proyectos han tenido problemas con implementar un despliegue seguro de interrupciones; es decir, los usuarios deben estar libres de cualquier riesgo que pueda significar la actualización de una nueva versión de la aplicación. No obstante, generalmente incorporar de golpe a todos los usuarios en la nueva versión del proyecto puede significar un riesgo alto.
+
+### Solución
+
+La implementación Blue-Green permite trasladar de poco en poco a los usuarios de una versión a otra. Tanto el Blue como Green son entornos identicos del proyecto, uno que sirve para abordar el tráfico en vivo (Blue) y el otro listo para ser probado por los usuarios (Green). A continuación se detallará una guía realizada por Vercel e implementada en el proyecto.
+
+### Caso de aplicación
+Primero se clona el proyecto de github a un repositorio privado. Luego se crea una cuenta de Vercel y finalmente se crea una instancia. Ahora, en “Settings” se detalla la configuración del proyecto para que Vercel lo pueda encender.
+
+Por el momento. se tiene el frontend colgado a nivel online:
+https://equipo-arquitectura-software.vercel.app
+
+![39](https://drive.google.com/uc?export=view&id=1rjEw-wl2e0WftQDQtpef6JaLu2uv8Xli)
+
+Además, como en un solo proyecto se tiene frontend y backned, entonces se detalla que solo queremos encender el frontend.
+
+### Fuentes:
+
+[https://vercel.com/templates/next.js/blue-green-deployments-vercel](https://vercel.com/guides/blue_green_deployments_on_vercel)
 
 ## Regresar
 [Regresar al índice](../../README.md)
