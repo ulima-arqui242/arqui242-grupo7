@@ -112,11 +112,13 @@ A diferencia de un proxy genérico, un embajador está diseñado específicament
 
 En términos simples, en lugar de que cada microservicio tenga que lidiar con las complejidades de la comunicación en red, el embajador se encarga de esas tareas. Esto permite a los desarrolladores enfocarse en la lógica del negocio del servicio, mientras el embajador maneja las preocupaciones externas.
 
+![image](https://github.com/user-attachments/assets/bb6fa2f2-9ddc-4667-b9af-d8bf94d1544a)
+
 ## ¿Por qué es importante?
 
 En una arquitectura distribuida, los microservicios suelen depender de servicios externos para obtener datos o realizar operaciones críticas. Esto puede incluir bases de datos, APIs de terceros, servicios de autenticación, entre otros. Sin un patrón adecuado, la comunicación entre estos servicios puede volverse compleja, difícil de mantener y propensa a errores.
 
-El **Ambassador Pattern** resuelve este problema al:
+El Ambassador Pattern resuelve este problema al:
 
 1. **Simplificar la comunicación entre servicios**: El embajador maneja todas las interacciones de red, permitiendo que el servicio principal se mantenga simple y centrado en su propósito.
 2. **Aumentar la seguridad**: Al canalizar el tráfico a través del embajador, se pueden implementar políticas de seguridad, como encriptación SSL/TLS y autenticación de manera centralizada.
@@ -133,6 +135,8 @@ El patrón se basa en desplegar un contenedor o proceso adicional que actúa com
 3. **Interacción con el servicio principal**: Una vez que la solicitud ha sido validada y procesada, el embajador la envía al servicio principal.
 4. **Monitoreo y métricas**: Mientras la solicitud es gestionada, el embajador recopila métricas y datos de trazabilidad, lo que facilita el análisis de rendimiento y la resolución de problemas.
 
+![image](https://github.com/user-attachments/assets/c3398e2b-9f9a-4ada-af30-fd5da227dac7)
+
 ## Ventajas del Ambassador Pattern
 
 ### 1. Desacoplamiento
@@ -146,6 +150,8 @@ Dado que el embajador es independiente del servicio al que representa, puede ser
 
 ### 4. Facilidad de pruebas y despliegue
 La separación de preocupaciones hace que sea más sencillo probar los servicios de forma aislada. El embajador puede simular entornos de producción, lo que facilita las pruebas y el despliegue continuo en entornos DevOps.
+
+![image](https://github.com/user-attachments/assets/ce86c2bd-48d7-4312-9af3-ed07da4bdad4)
 
 ## Desventajas y desafíos
 
@@ -161,12 +167,14 @@ A pesar de sus múltiples beneficios, el Ambassador Pattern no está exento de d
 - **Comunicación segura entre microservicios**: El embajador maneja la encriptación y autenticación de todas las comunicaciones salientes.
 - **Monitoreo y trazabilidad en entornos de microservicios**: Simplifica la recolección de métricas y datos de trazabilidad para análisis y diagnóstico.
 
+![image](https://github.com/user-attachments/assets/01814e9c-40c4-422b-9190-abbbfd739e90)
+
 ## Mejores prácticas para implementar el Ambassador Pattern
 
 1. **Utiliza sidecars en Kubernetes**: Implementar el embajador como un sidecar container en Kubernetes permite una gestión más sencilla y consistente de los servicios.
 2. **Configura políticas de seguridad**: Asegúrate de que el embajador implemente encriptación y autenticación robustas.
 3. **Automatiza la gestión del embajador**: Utiliza herramientas de automatización para gestionar y actualizar los embajadores.
-4. **Monitoreo constante**: Implementa herramientas de monitoreo como **Prometheus** y **Grafana** para obtener visibilidad sobre el rendimiento.
+4. **Monitoreo constante**: Implementa herramientas de monitoreo como Prometheus y Grafana para obtener visibilidad sobre el rendimiento.
 
 ## Conclusión
 
