@@ -618,14 +618,44 @@ En el archivo “middleware.js” , se utiliza matcher para ejecutar el código 
 
 Se redirige de una versión a otra, creando ramas. Cada rama tiene un link propio donde se despliega una versión diferente del proyecto:
 
-https://drive.google.com/file/d/1vHgGo9Heuduk9Peqk_fThnPRtC0__bh1/view?usp=sharing
-
-![55](https://drive.google.com/uc?export=view&id=1vHgGo9Heuduk9Peqk_fThnPRtC0__bh1)
+![55](https://drive.google.com/uc?export=view&id=1nK681vITRgNtqXYJauUtkE_CUK9hVqKp)
 
 Link del blue:
 
+![56](https://drive.google.com/uc?export=view&id=1fiSURxy7mlVla9-L3x7HScBj5g4_QsFX)
 
+Link del green:
 
+![57](https://drive.google.com/uc?export=view&id=1788_b_hqJqGRbmg3FacWiC-1Tj9CqwSB)
+
+Una muestra del código:
+```
+import { NextResponse } from 'next/server';
+import { get } from '@vercel/edge-config';
+
+export const config = { matcher: '/:path*' }; 
+
+export async function middleware(request) {
+  const trafficSplit = await get('traffic-split');
+
+  if (!trafficSplit) {
+    console.error('No se encontró la configuración de división de tráfico');
+    return NextResponse.next();
+  }
+
+  const randomValue = Math.random() * 100;
+  //Si el random que simula el tráfico supera el 80...
+  const isBlue = randomValue < trafficSplit.blue;
+	//Entonces, redirige al tráfico hacia green en vez de blue.
+  const newUrl = new URL(request.url);
+  newUrl.hostname = isBlue
+    ? 'equipo-arquitectura-software-git-main-aarons-projects-13d882a4.vercel.app'
+    : 'equipo-arquitectura-software-git-green-aarons-projects-13d882a4.vercel.app';
+
+  return NextResponse.redirect(newUrl);
+}
+
+```
 
 ### Fuentes:
 
