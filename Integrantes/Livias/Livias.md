@@ -19,8 +19,7 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
 
 ![Mercado Libre](https://drive.google.com/uc?export=view&id=1hCmi7Io9b_BaNVUuTnPKbqm_TUABGyW5)
-https://drive.google.com/file/d/1f6EP291ayQ9Y4UkxGLNXfGoIGs6w8QHs/view?usp=sharing
-https://drive.google.com/uc?export=view&id=1f6EP291ayQ9Y4UkxGLNXfGoIGs6w8QHs
+
 ## Modelos de simlitud de textos
 
 ### Desarrollo conceptual
