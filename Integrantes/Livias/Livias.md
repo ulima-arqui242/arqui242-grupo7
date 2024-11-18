@@ -449,6 +449,184 @@ Como se está utilizando build para encenderlo, lo detallamos en el proyecto:
 
 ![41](https://drive.google.com/uc?export=view&id=1AzzMcFdibaAaEl9rNKTjYQyVdXbeBJgy)
 
+Skew Protection:
+Activar el Skew proteccion garantiza que los clientes se asignen adecuadamente en las versiones Verde o Azul del proyecto, evitando los clientes vean distintas versiones según el lugar en donde accedan. Asegura que los usuarios vean una versión durante la sesión de pruebas.
+
+Veo que algunas opciones cuestan. Aquí se ve que no puedo activar esta opción si no tengo un plan Pro.
+
+![42](https://drive.google.com/uc?export=view&id=1qTfj_fwpJj099wb7oqkbxYgfe41EtwcC)
+
+Bypass:
+El Bypass sirve como una llave maestra y sirve cuando uno quiere hacer pruebas de calidad a un proyecto que tiene varias contraseñas en el programa. Verce crea esta llave maestra con la finalidad de crear una contraseña única que habilita todas las funcionalidades del sistema.
+
+![43](https://drive.google.com/uc?export=view&id=1ig6aSVdnFxXJKQt4tc3zHs79Ux0akU_g)
+
+Como contraseña, solo acepta mayúsculas y minúsculas.
+
+![44](https://drive.google.com/uc?export=view&id=1tfQ88x4jTIMCNjSr2H5j43VyXgNkWnU5)
+
+Ejemplo de uso:
+  1. Poner en el power sheel:
+  ```
+  x-vercel-protection-bypass: PulbzoGbvtLVm2h6r0xpHeTTiSjnzbUM
+  ```
+  2. Luego en el backend:
+  ```
+  const config: PlaywrightTestConfig = {
+    use: {
+      extraHTTPHeaders: {
+        'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
+        'x-vercel-set-bypass-cookie': true | 'samesitenone' (optional)
+      }
+    }
+  }
+  ```
+
+Edge:
+La configuración de Edge permite dividir el tráfico de los clientes entre implementaciones Azul y Verde.
+Primero, ponemos el siguiente comando en el bash para instar Vercel y Edge:
+```
+npm i @vercel/edge-config
+npm i -g vercel@latest
+```
+Nos dirigimos a la siguiente instancia:
+
+![45](https://drive.google.com/uc?export=view&id=1YiGhq3lqYDc4pdQXcUGnpzTSlMI6Y0z4)
+
+1. Creamos el “Nombre de la tienda” y conectamos:
+    
+    **equipo-arquitectura-softwa-store**
+    
+2. Se genera una variable de entorno:
+    
+    Se generará una variable de entorno y un token de lectura que almacena la conexión
+    
+    Después, actualizaremos la tienda con datos de clave-valor para que luego lean el valor “prueba”.
+    
+    Fuente: https://vercel.com/docs/storage/edge-config/edge-config-limits 
+    
+    [**Lee**](https://vercel.com/docs/storage/edge-config/edge-config-limits#reads)
+    
+    Las lecturas indican la frecuencia con la que su proyecto solicitó acceso a Edge Config para recuperar datos a través del SDK o la API REST. Vercel lo cuenta como una lectura, independientemente de si recupera uno o todos los elementos.
+    
+    [**Escribe**](https://vercel.com/docs/storage/edge-config/edge-config-limits#writes)
+    
+    Las escrituras representan la frecuencia con la que actualiza su configuración de Edge a través del SDK o la API REST.
+
+   ![45](https://drive.google.com/uc?export=view&id=18nJMyb36HWrgT2L05SifhEhUFu4zMbng)
+
+   En síntensis, tanto el token como la id se utilizan para crear una cadena de conexión. Esta cadena se guarda en el EDGE_CONFIG (variable de entorno). Este aspecto permite leer el contenido de la tienda utilizando SDK.
+
+   ![46](https://drive.google.com/uc?export=view&id=14dsibixybMXjVHBr42JF927dlTQ5Wgcq)
+   
+3. Agregar clave-valor
+
+  ![47](https://drive.google.com/uc?export=view&id=1ML-uGxkIvaRNp1QbR1GEk4EcPVY9PhKB)
+
+4. Extraer últimas variables de entorno
+  ```
+   vercel env pull .env.development.local
+  ```
+  Yo me registré con github.
+
+  ![48](https://drive.google.com/uc?export=view&id=1LD52e_xj2jhvpFEZOrX-Q_jd4Coi5foV)
+
+  ![49](https://drive.google.com/uc?export=view&id=17RTA2b3Fn75wEeNhGK6JFQkixM-_00PN)
+
+  Si regresamos al comand prompt, aparecerá:
+  Error: Su código base no está vinculado a un proyecto en Vercel. Ejecute `vercel link` para comenzar.
+  
+  ![50](https://drive.google.com/uc?export=view&id=1MFhRJJCbSmdSVNaPXY0WSfAi509V_eCd)
+  
+  Si sale esto, entonces podemos continuar:
+
+  ![51](https://drive.google.com/uc?export=view&id=1ZwHLojqcSqNx6iFCGrDqmy_ywwqeBpzG)
+5. Ejecutar script
+  
+  Codigo 1 no ejecuta:
+  Primero agregué un archivo en el frontend.
+  ```
+  /frontend
+	/.next
+	/node_modules
+	/src
+	.gitignore
+	jsconfig.json
+	middleware.js  <-- Aquí está el archivo
+	next.config.mjs
+	package-lock.json
+	package.json
+	README.md
+  ```
+  Lo que hace es llamar el valor de blue que sería “80” cuando se visita la página /frontpage, pero cuando se probó no se puedo ejecutar el console.log. Por lo que se tubo problemas al copilar este código.
+  ```
+  console.log('Middleware cargado al iniciar el servidor'); // Se debe imprimir al iniciar npm run dev
+  
+  import { NextResponse } from 'next/server';
+  import { get } from '@vercel/edge-config';
+   
+  export const config = { matcher: '/frontpage' };
+   
+  export async function middleware() {
+    const greeting = await get('traffic-split');
+    return NextResponse.json(greeting.blue);
+  }
+  ```
+  Codigo 2 ejecuta pero me sale error:
+  ```
+  /frontend
+	/.next
+	/node_modules
+	/src
+		/frontpage
+			page.js <-Aquí se modificó
+  ```
+  El código hace lo mismo pero solo imprime en el cmd ‘Resultado recibido: 80’
+  ```
+  import { NextResponse } from 'next/server';
+  import { get } from '@vercel/edge-config';
+   
+  //export const config = { matcher: '/welcome' };
+   
+  export async function middleware() {
+    const greeting = await get('traffic-split');
+    return NextResponse.json(greeting.blue);
+  }
+  
+  function App() {
+    // Estado para almacenar las imágenes del carrusel
+    middleware().then((resultado) =>{
+      console.log('Resultado recibido:', resultado);
+    }
+    );
+    //Codigo...
+  ```
+  Entonces, la página funciona con normalidad, pero sale un ícono de “5 errors” que dicen: 
+  Error: @vercel/edge-config: No se proporcionó ninguna cadena de conexión
+  
+  ![52](https://drive.google.com/uc?export=view&id=1G9vmxPQEPrk74pc_M9Kb7b26BuEvU1uV)
+
+  ![53](https://drive.google.com/uc?export=view&id=1ErUwE8F00eL0XPu6BZ9VLgJ1sWp0BdqG)
+
+  Pero el string ya está conectado:
+
+  ![54](https://drive.google.com/uc?export=view&id=1vHgGo9Heuduk9Peqk_fThnPRtC0__bh1)
+
+### ¿Cuál era la idea?
+
+En el archivo “middleware.js” , se utiliza matcher para ejecutar el código cuando se vista cualquier página de la aplicación. Luego, con una petición get se obtiene los valores traffic-split. Cuando el random que simula el tráfico sea superior al 80, entonces redirige el tráfico del blue al green. Entonces, se puede llevar una porción de los clientes a una nueva versión de la aplicación para probar cómo se desemvuelve. Si la nueva versión tiene problemas, entonces se regresar a la versión anterior. Caso contrario, se va aumentando la clave-valor {”blue”:90, “green”:10}
+
+Se redirige de una versión a otra, creando ramas. Cada rama tiene un link propio donde se despliega una versión diferente del proyecto:
+
+https://drive.google.com/file/d/1vHgGo9Heuduk9Peqk_fThnPRtC0__bh1/view?usp=sharing
+
+![55](https://drive.google.com/uc?export=view&id=1vHgGo9Heuduk9Peqk_fThnPRtC0__bh1)
+
+Link del blue:
+
+
+
+
 ### Fuentes:
 
 [https://vercel.com/templates/next.js/blue-green-deployments-vercel](https://vercel.com/guides/blue_green_deployments_on_vercel)
