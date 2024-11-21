@@ -318,7 +318,22 @@ Vault actúa como una Autoridad Certificadora (CA) y permite emitir certificados
 
 ### - Gestión de Encriptación:
 Proporciona servicios de cifrado y descifrado para aplicaciones sin necesidad de exponer claves directamente.
+## Problemas Comunes Resueltos por Vault
+### Exposición de Secretos en el Código:
+-  **Problema** : Guardar claves API, contraseñas o tokens en el código fuente puede ser riesgoso, ya que puede ser expuesto a actores maliciosos.
+- **Solución** : Vault proporciona una API segura para recuperar secretos, eliminando la necesidad de incluirlos directamente en el código.
 
+### Gestión Manual de Credenciales:
+- **Problema**: Generar y distribuir manualmente credenciales aumenta el riesgo de errores humanos y exposición.
+- **Solución**: Vault automatiza la generación y distribución de secretos para usuarios y aplicaciones.
+
+### Falta de Control de Acceso:
+- **Problema**: Sin controles estrictos, cualquier usuario podría acceder a secretos no autorizados.
+- **Solución**: Vault utiliza políticas basadas en roles para restringir accesos según permisos definidos.
+
+#### Rotación de Credenciales:
+- **Problema**: Las credenciales estáticas son vulnerables si son comprometidas y no se rotan regularmente.
+- **Solución**: Vault implementa rotación automática de secretos para aumentar la seguridad.
 ## Ventajas
 - Cifrado Avanzado: Cifrado AES-256 en reposo y TLS en tránsito.
 - Alta Disponibilidad: Arquitectura distribuida con soporte para clústeres.
@@ -327,6 +342,8 @@ Proporciona servicios de cifrado y descifrado para aplicaciones sin necesidad de
 ## Desventajas
 - Complejidad Inicial: La configuración avanzada puede requerir tiempo y experiencia.
 - Costo: La versión empresarial puede ser costosa para organizaciones pequeñas.
+
+
 # INSTALACIÓN Y CONFIGURACIÓN
 
 ### **1. Descargar HashiCorp Vault**
@@ -336,7 +353,115 @@ https://www.vaultproject.io/downloads
 ----------------------------------------------------------------
 ### **2. Inicializar Vault**
 *Inicia Vault y configura su almacenamiento de backend.* 
+Ejecutamos Vault por primera vez en modo desarrollo usando el siguiente comando:
+```
+vault server -dev
+
+```
+### 3. Configurar Vault para Producción
+*Configuramos Vault para usar un almacenamiento de backend de Raft y aseguramos que las direcciones y puertos sean correctos.(creamos un archivo llamado vault.hcl)*
+```
+ui = true
+cluster_addr = "http://127.0.0.1:8201"   # Puerto para el clúster
+api_addr = "http://127.0.0.1:8200"       # Puerto para la API
+disable_mlock = true
+
+storage "raft" {
+  path    = "C:\\Program Files\\Vault\\Data"  # Ruta para almacenar el estado de Raft
+  node_id = "127.0.0.1"  # ID del nodo
+}
+
+listener "tcp" {
+  address = "0.0.0.0:8200"  # Dirección para API (puerto 8200)
+  cluster_address = "0.0.0.0:8201"  # Dirección para el clúster (puerto 8201)
+  tls_disable = 1  # Deshabilitar TLS si no se necesita
+}
+
+```
+### 4. Inicializar y Desarrollar Clúster
+*Después de configurar Vault, procedimos a inicializar y desarrollar el clúster.*
+Inicializamos Vault en un entorno de clúster utilizando:
+```
+vault server -config="C:\Program Files\Vault\Config\vault.hcl"
 
 
+```
+y en otra instancia ejecutamos el vault
+```
+vault operator init
 
+```
+![image](https://github.com/user-attachments/assets/987dedfd-049d-4a83-a020-f9eb087a8042)
+
+### 5. Verificar Estado de Vault
+*Comprobamos el estado de Vault para asegurarnos de que estaba en funcionamiento con los puertos y configuraciones correctas.*
+
+```
+vault status
+
+```
+![image](https://github.com/user-attachments/assets/0775b02e-af7d-4c03-a308-5df5daf1e73d)
+### 6. DESBLOQUEAR EL VAULT CON LOS KEYS DADOS AL INICIAR
+![image](https://github.com/user-attachments/assets/a3169586-4b06-4da4-9a26-eba72ec59801)
+Finalizando con el login :
+![image](https://github.com/user-attachments/assets/b3ada081-3fa6-4d14-888f-8bb2fca88f69)
+
+### 7. Crear las pruebas en el Backend (Mediante vsCode en un archivo app.js)
+- No olvidar instalar las dependencias de axios y express
+```
+const express = require('express');
+const axios = require('axios');
+
+// Inicializar la aplicación Express
+const app = express();
+const port = 5000;
+
+// Dirección de tu servidor Vault
+const VAULT_URL = 'http://127.0.0.1:8200'; // Cambiar si usas HTTPS
+const VAULT_TOKEN = 'hvs.Re1ijCFpxI5kmt8q2SERVKOk'; // Tu token de autenticación
+
+// Ruta para obtener un secreto desde Vault
+app.get('/get_secret', async (req, res) => {
+  try {
+    // Define la ruta del secreto que deseas obtener
+    const secretPath = 'my_secret';
+
+    // Realizar la petición a Vault para obtener el secreto
+    const response = await axios.get(`${VAULT_URL}/v1/secret/data/${secretPath}`, {
+      headers: {
+        'X-Vault-Token': VAULT_TOKEN,
+      },
+      httpsAgent: new (require('https')).Agent({ rejectUnauthorized: false })
+    });
+
+    // Devolver el secreto obtenido
+    res.json(response.data.data.data);
+  } catch (error) {
+    // Manejo de errores
+    console.error(error);
+    res.status(500).json({ error: 'Error al obtener el secreto' });
+  }
+});
+
+// Ruta principal
+app.get('/', (req, res) => {
+  res.send('Bienvenido al backend de Vault con Node.js y Axios!');
+});
+
+// Iniciar el servidor
+app.listen(port, () => {
+  console.log(`Servidor backend corriendo en http://localhost:${port}`);
+});
+
+```
+### 8. Ejecutar el app.js
+```
+node app.js
+
+```
+### 9. Buscar el secreto en la pagina 
+![image](https://github.com/user-attachments/assets/de71ac8d-2c00-40e1-a000-acbcde2fe0b1)
+
+## Conclusión
+HashiCorp Vault es una herramienta esencial para organizaciones que buscan proteger y gestionar secretos de forma centralizada. Su capacidad para emitir credenciales dinámicas, integrarse con diversas plataformas y ofrecer servicios avanzados de cifrado lo posiciona como un estándar en entornos modernos. Aunque su curva de aprendizaje puede ser pronunciada, los beneficios en términos de seguridad y control justifican ampliamente la inversión de tiempo y recursos.
 [Regresar al índice](../../README.md)
