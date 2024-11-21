@@ -288,4 +288,55 @@ Para que funcione correctamente , debes ejecutar la API en VSCODE , para que est
 http://localhost:5000/api/storage/generate-sas-token?blobName=ProfeQuiero20.
 ```
 
+
+# TEMA ELEGIDO: HashiCorp Vault - Gestión Segura de Secretos
+
+HashiCorp Vault es una herramienta avanzada de gestión de secretos que permite almacenar, acceder y proteger datos sensibles, como claves de API, contraseñas, certificados y configuraciones. Diseñado con un enfoque en la seguridad, Vault se integra fácilmente con aplicaciones modernas y entornos distribuidos para garantizar que los secretos estén protegidos y accesibles solo para las entidades autorizadas.
+
+## Características Principales
+### 1. Seguridad Centralizada:
+Vault almacena todos los secretos en una ubicación central, eliminando la dispersión de datos sensibles. Su cifrado avanzado asegura que los secretos permanezcan protegidos tanto en reposo como en tránsito.
+
+### 2. Acceso Basado en Políticas:
+Vault utiliza políticas detalladas para controlar el acceso a los secretos, asegurando que solo los usuarios o aplicaciones autorizados puedan acceder a información específica.
+
+### 3. Generación Dinámica de Credenciales:
+Vault puede generar credenciales temporales para bases de datos, servicios en la nube y más, reduciendo el riesgo de exposición de credenciales estáticas.
+
+### 4. Alto Nivel de Integración:
+Compatible con Kubernetes, Terraform, AWS, Azure y otros servicios populares, Vault permite una implementación sin interrupciones en entornos híbridos y en la nube.
+
+## Casos de Uso
+### - Gestión de Credenciales de Bases de Datos:
+Vault puede emitir credenciales dinámicas de corta duración para bases de datos, garantizando que cada aplicación tenga acceso seguro a sus recursos.
+
+### - Protección de Claves de API:
+Almacena y controla el acceso a claves de API de terceros, asegurando que no sean compartidas ni expuestas en el código fuente.
+
+### - Firma de Certificados:
+Vault actúa como una Autoridad Certificadora (CA) y permite emitir certificados firmados bajo demanda.
+
+### - Gestión de Encriptación:
+Proporciona servicios de cifrado y descifrado para aplicaciones sin necesidad de exponer claves directamente.
+
+## Ventajas
+- Cifrado Avanzado: Cifrado AES-256 en reposo y TLS en tránsito.
+- Alta Disponibilidad: Arquitectura distribuida con soporte para clústeres.
+- Auditoría Completa: Registros detallados de todas las acciones realizadas dentro del sistema.
+- Integración Fácil: Compatible con herramientas populares como Terraform, Ansible y Kubernetes.
+## Desventajas
+- Complejidad Inicial: La configuración avanzada puede requerir tiempo y experiencia.
+- Costo: La versión empresarial puede ser costosa para organizaciones pequeñas.
+# INSTALACIÓN Y CONFIGURACIÓN
+
+### **1. Descargar HashiCorp Vault**
+*Descarga la última versión de Vault desde su sitio oficial:*
+
+https://www.vaultproject.io/downloads 
+----------------------------------------------------------------
+### **2. Inicializar Vault**
+*Inicia Vault y configura su almacenamiento de backend.* 
+
+
+
 [Regresar al índice](../../README.md)
