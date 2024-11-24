@@ -117,6 +117,9 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 
 
 
+## Patrón Arquitectura MicroKernel
+
+
 
 
 ## Demo Video
