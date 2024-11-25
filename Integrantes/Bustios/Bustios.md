@@ -134,6 +134,11 @@ La idea central de este estilo arquitectónico es permitir la extensión de su f
 
 **Consideraciones tecnicas :**
 
+El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un plugin que mediante sus propioas librerias que permite enviar correos electronicos desde código. Si seguimos las indicaciones en su propia web (https://www.nodemailer.com) para hacer uso de plugin nos encontramos con los siguientes pasos.
+
+#### 
+
+
 
 ## Demo Video
 
