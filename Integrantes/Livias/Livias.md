@@ -606,6 +606,8 @@ Nos dirigimos a la siguiente instancia:
   
   ![52](https://drive.google.com/uc?export=view&id=1G9vmxPQEPrk74pc_M9Kb7b26BuEvU1uV)
 
+  En esta imagen se puede ver que el 'greeting' es una clave diferente al 'traffic-split'. No obstante, en el video explico que a pesar que estos 2 son iguales, me retorna el mismo error.
+
   ![53](https://drive.google.com/uc?export=view&id=1ErUwE8F00eL0XPu6BZ9VLgJ1sWp0BdqG)
 
   Pero el string ya está conectado:
@@ -656,6 +658,14 @@ export async function middleware(request) {
 }
 
 ```
+
+### Video:
+
+https://drive.google.com/file/d/131tqHWWqavBh_w7WcdClHA8OElk6_o7P/view?usp=sharing
+
+### Link del repositorio copiado:
+
+https://github.com/Aron-png/equipo-arquitectura-software.git
 
 ### Fuentes:
 
