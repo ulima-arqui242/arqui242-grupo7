@@ -134,7 +134,7 @@ La idea central de este estilo arquitectónico es permitir la extensión de su f
 
 **Consideraciones tecnicas :**
 
-El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un plugin que mediante sus propioas librerias que permite enviar correos electronicos incluyendo el destintatario, asunto, mensaje e inclusive permite ingresar HTML con estilos , es importante recalcar que Nodemailer no nos proporciona con un correo desde el cual enviar los correos, para ello nosotros tendremos que utilizar nuestro propio correo ya sea gmail o hotmail y realizar una serie de configuraciones para poder su correcto uso. Si seguimos las indicaciones en su propia web (https://www.nodemailer.com) para hacer uso de plugin nos encontramos con los siguientes pasos.
+El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un plugin que mediante sus propioas librerias que permite enviar correos electronicos incluyendo el destintatario, asunto, mensaje e inclusive permite ingresar HTML con estilos , es importante recalcar que Nodemailer no nos proporciona con un correo desde el cual enviar los correos, para ello nosotros tendremos que utilizar nuestro propio correo y realizar una serie de configuraciones para poder su correcto uso (Por motivos practicos se utilizará un correo de google). Si seguimos las indicaciones en su propia web (https://www.nodemailer.com) para hacer uso de plugin nos encontramos con los siguientes pasos.
 
 #### 1. Instalamos las librerias en el proyecto
 
@@ -149,7 +149,10 @@ Creamos el archivo y copiamos y  el código que nos indica la pagina de https://
 
 ![index](index.png)
 
-#### Almacenamos las credenciales del correo a utilizar
+#### 3. Seteo de credenciales y configuración de correo
+A continuación definimos las siguientes variables dentro de un  .env en el backend para poder almacenar el correo y contraseña de la dirección de correo que se planea utilizar, importante dejar el campo de la contraseña vacio, pues luego definiremos   una contraseña especial para aplicaciones que nos propocionará google
+
+![index](env.png)
 
 ## Demo Video
 
