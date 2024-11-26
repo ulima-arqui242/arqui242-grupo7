@@ -155,13 +155,12 @@ A continuación definimos las siguientes variables dentro de un  .env en el back
 ![credenciales](env.png)
 
 #### Activamos verificación de 2 pasos
-Para poder generar una contraseña de aplicación para una cuenta de google es necesario activar primero la verificación de 2 pasos en el apartado de seguridad de la cuenta de google
+Para poder generar una contraseña de aplicación para una cuenta de google es necesario activar primero la verificación de 2 pasos en el apartado de seguridad de la cuenta de google, para ello ocuparemos de un correo o número de telefono que sirva como autenticador adicional.
 
 ![2pasos](2pasos.png)
 
 #### Generar contraseña de aplicación
 Luego de haber activado la verificación de 2 pasos ingresamos al siguiente enlace https://myaccount.google.com/u/5/apppasswords?rapt=AEjHL4OhXd0DaCXS7CjMGYZewDnFaRYZhcdZNGlF5_HlRx4o5Q3f5COtnudTolOAf5_Bt7W_FrIwpHLg0HkaCGmbYTEP97T-QyFI8yN9p-5tevqO_WazmzQ .
-
 
 Ahora definimos el nombre de la aplicación para la que se va a generar la clave de aplicación y le damos a crear 
 
