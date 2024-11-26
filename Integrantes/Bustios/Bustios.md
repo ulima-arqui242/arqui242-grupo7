@@ -152,7 +152,7 @@ Creamos el archivo y copiamos y  el código que nos indica la pagina de https://
 #### 3. Seteo de credenciales y configuración de correo
 A continuación definimos las siguientes variables dentro de un  .env en el backend para poder almacenar el correo y contraseña de la dirección de correo que se planea utilizar, importante dejar el campo de la contraseña vacio, pues luego definiremos   una contraseña especial para aplicaciones que nos propocionará google
 
-![index](env.png)
+![credenciales](env.png)
 
 ## Demo Video
 
