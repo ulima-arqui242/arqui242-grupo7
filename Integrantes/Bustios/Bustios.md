@@ -165,6 +165,7 @@ Luego de haber activado la verificación de 2 pasos ingresamos al siguiente enla
 
 Ahora definimos el nombre de la aplicación para la que se va a generar la clave de aplicación y le damos a crear 
 
+![claveapp](app.png)
 
 ## Demo Video
 
