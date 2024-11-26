@@ -175,7 +175,13 @@ Una vez generada la clave podemos ingresarla en la variable EMAIL_PASSWORD en el
 ### 4. Prueba
 Por ultimo ejecutamos el backend y realizamos una petición de tipo POST al endpoint http://localhost:3009/sendmail e incluimos en su body los siguientes valores
 
+utilizamos postman para hacer a prueba 
+
 ![image](https://github.com/user-attachments/assets/0b85fedc-ee7d-4d8a-b5f8-329da7618239)
+
+Y recibimos el correo exitosamente
+
+![image](https://github.com/user-attachments/assets/843aef5b-37fc-45d8-9932-ef03f47760da)
 
 
 
