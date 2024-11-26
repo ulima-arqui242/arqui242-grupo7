@@ -14,6 +14,84 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 ### De aquí a 10 años
 - Trabajando para un proyecto relacionada a las páginas web, tareas como darle mantenimiento o agregar nuevas funcionalidades.
 
+# Tactica de disponibilidad: Degradación
+## Panorama General
+## Solución: Degradación
+## Métodos de degradación
+### Cambiar de base de datos
+### Cambiar la resolución de la imagen
+La función principal cargarYRedimensionarImagen realiza varios pasos clave:
+
+### a) **Carga de la imagen**
+
+Se crea un nuevo objeto Image y se asigna la URL de la imagen (imagenUrl) a su propiedad src. Esto inicia la carga de la imagen. Luego, se añade la propiedad crossOrigin con valor 'Anonymous' para permitir que el <canvas> acceda a la imagen incluso si está alojada en un dominio diferente.
+
+### b) **Redimensionamiento de la imagen**
+
+Cuando la imagen se carga completamente (evento onload), se realiza lo siguiente:
+
+1. **Creación de un canvas**:
+    - Se crea un elemento canvas que servirá para redimensionar la imagen.
+    - Se configura su tamaño con las dimensiones deseadas (ancho y alto).
+2. **Obtención del contexto del canvas**:
+    - Se obtiene el contexto 2D del canvas (ctx) para dibujar la imagen.
+3. **Dibujo de la imagen**:
+    - Se utiliza el método drawImage para dibujar la imagen redimensionada en el canvas.
+### c) **Conversión a Base64**
+
+Después de dibujar la imagen en el canvas, el método toDataURL convierte el contenido del canvas a una cadena en formato Base64. En este caso, se especifica que el formato será JPEG con una calidad de compresión del 50%.
+
+### d) **Actualización del estado**
+
+Finalmente, la cadena Base64 se almacena en el estado imagenReducida mediante setImagenReducida.
+```
+import { useState, useEffect } from 'react';
+
+const RedimensionarImagen = ({ imagenUrl, ancho, alto }) => {
+  const [imagenReducida, setImagenReducida] = useState(null);
+  useEffect(() => {
+    const cargarYRedimensionarImagen = async () => {
+      const img = new Image();
+      img.src = imagenUrl;
+      img.crossOrigin = 'Anonymous'; // Permite que el canvas acceda a la imagen
+  
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+  
+        // Redimensionamos la imagen
+        canvas.width = ancho;
+        canvas.height = alto;
+  
+        // Dibujamos la imagen redimensionada en el canvas
+        ctx.drawImage(img, 0, 0, ancho, alto);
+  
+        // Convertimos el canvas en una imagen en formato base64
+        const imagenBase64 = canvas.toDataURL('image/jpeg', 0.5); // Calidad al 80%
+        
+        setImagenReducida(imagenBase64);
+      };
+    };
+  
+    cargarYRedimensionarImagen();
+  }, [imagenUrl, ancho, alto]);
+  
+
+  return (
+    <div>
+      {imagenReducida ? (
+        <img src={imagenReducida} alt="Imagen Redimensionada" />
+      ) : (
+        <p>Cargando imagen...</p>
+      )}
+    </div>
+  );
+};
+
+export default RedimensionarImagen;
+
+```
+
 # Tema elegido: Técnicas NLP
 ## Panorama General
 El presente proyecto aborda técnicas NLP para tareas de resumenes y similitud de textos. De esta forma se plantea incorporarlo en el trabajo grupal para ayudar al usuario en la elección del servicio del hogar de modo que se le muestre un resumen de las las reseñas que van generando los servicios. La estrategia se inspira de Mercado Libre en la que incorpora una IA el resumen de textos asociados a sus productos.
