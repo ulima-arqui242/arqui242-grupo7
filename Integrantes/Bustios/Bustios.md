@@ -143,6 +143,7 @@ El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un pl
 #### Creamos un archivo.JS para la ruta en el backend
 Creamos el archivo y copiamos y  el código que nos indica la pagina de https://www.nodemailer.com , sin antes importar las librerias que se han utilizado para manejar los endpoints del backend. (En este caso se utilzó router. para manejar las peticiones. 
 
+![install](sendmailjs.png)
 
 
 
