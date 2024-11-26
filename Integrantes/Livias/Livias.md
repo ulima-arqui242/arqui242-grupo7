@@ -99,6 +99,8 @@ export default RedimensionarImagen;
 
 Este método consiste en crear otra base de datos y así cambiar de una resolución a otra cuando se necesite. Debido a que ya se implementó el script de python para las imagenes y solo faltaba bajar la resolución del video, se decidió con agregarle un campo adicional para ir intercambiando entre el video HD y el video sin HD. Este último, a diferencia de Youtube que baja de 1080p60 a 360p, el video también baja la calidad del audio gradualmente. 
 
+![Imagen](https://drive.google.com/uc?export=view&id=1QWumVKdCtiow8qEOmYP4TmFX0b5q8U6j)
+
 ### Video
 
 A continuación, el video corto que presenta la implementación de la "Degradación" en el proyecto.
