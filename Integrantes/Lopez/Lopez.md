@@ -180,4 +180,84 @@ A pesar de sus múltiples beneficios, el Ambassador Pattern no está exento de d
 El Ambassador Pattern es una solución poderosa para gestionar la complejidad de la comunicación entre microservicios en entornos cloud. Si bien introduce ciertos desafíos, sus beneficios en términos de desacoplamiento, seguridad y escalabilidad lo convierten en una herramienta valiosa para arquitecturas modernas. Al aplicar este patrón, las organizaciones pueden mejorar la eficiencia de sus servicios, reducir la complejidad del código y optimizar el rendimiento de sus aplicaciones.
 
 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+# Detección de Ataques DoS con Snort
+
+## 1. Introducción
+
+El objetivo de este proyecto es analizar la eficacia de los **Sistemas de Detección de Intrusiones (IDS)**, específicamente el IDS **Snort**, para la detección de ataques **Denegación de Servicio (DoS)**. Los ataques DoS son una de las amenazas más comunes y sencillas en el ámbito de la ciberseguridad, caracterizados por la sobrecarga de un servidor con solicitudes maliciosas, haciendo que los servicios se vuelvan inaccesibles para los usuarios legítimos. Este trabajo evalúa cómo Snort, un IDS basado en firmas y anomalías, puede detectar y mitigar un ataque DoS.
+
+![snort_large](https://github.com/user-attachments/assets/b42cfc57-0862-43ca-9ba0-ba3728e37d19)
+
+## 2. Fundamentos de Snort y su Función en la Detección de Ataques DoS
+
+Snort es una de las herramientas IDS más utilizadas debido a su capacidad para detectar diversos tipos de ataques mediante el análisis profundo de paquetes de red. En el caso de los ataques DoS, Snort se configura para identificar patrones específicos de tráfico malicioso, como el envío masivo de paquetes ICMP (ping floods) o TCP SYN floods. Snort también puede detectar anomalías en el tráfico de red que puedan indicar un posible ataque, como un aumento inusitado de solicitudes hacia un servidor en particular.
+
+## 3. Ataque DoS: Características y Riesgos
+
+Un ataque de **Denegación de Servicio (DoS)** busca interrumpir el servicio de un sistema mediante la sobrecarga de sus recursos. En un ataque DoS, el atacante envía una gran cantidad de solicitudes al objetivo, agotando recursos como CPU, memoria o ancho de banda, y evitando que el sistema procese las solicitudes legítimas.
+
+### Características del ataque DoS:
+- **Sobrecarga de tráfico:** Gran volumen de paquetes enviados a un servidor o red.
+- **Fácil ejecución:** Los atacantes no necesitan grandes conocimientos técnicos para ejecutar un ataque DoS, lo que lo convierte en una amenaza común.
+- **Impacto significativo:** Aunque no causa daño directo a los sistemas, puede provocar la caída de servicios, pérdidas económicas y daños a la reputación.
+
+![syn-flood-attack-ddos-attack-diagram-2](https://github.com/user-attachments/assets/f67981a5-0b78-414f-9964-568a81a1c257)
+
+## 4. Metodología de Detección de Ataques DoS con Snort
+
+El proceso para detectar un ataque DoS utilizando Snort se basa en el análisis de tráfico de red en tiempo real. Snort identifica patrones y anomalías que corresponden a técnicas comunes de ataques DoS. A continuación se describe la metodología utilizada:
+
+1. **Monitoreo del tráfico:** Snort se configura para capturar y analizar el tráfico de red, observando cualquier comportamiento anómalo que pueda indicar un ataque DoS.
+   
+2. **Análisis de patrones:** Snort utiliza reglas predefinidas para comparar el tráfico observado con patrones de ataques DoS conocidos. Por ejemplo, el tráfico de un SYN flood o ping flood es detectado por firmas específicas que identifican estas amenazas.
+
+3. **Generación de alertas:** Si Snort detecta un ataque, genera una alerta en tiempo real, indicando la posible presencia de un ataque DoS.
+
+![0_m3PUPRURKYEDPiW6](https://github.com/user-attachments/assets/ed477988-f806-4210-8176-75da2529ef89)
+
+## 5. Experimentación
+
+Para evaluar la capacidad de Snort para detectar un ataque DoS, se realizaron las siguientes pruebas experimentales:
+
+- **1) Entorno de prueba:** Se configuró un entorno de red controlado con un servidor de prueba y un sistema Snort desplegado en un equipo intermediario que analiza el tráfico entre los clientes y el servidor.
+
+  ![imagen](https://github.com/user-attachments/assets/6b6955ff-1886-4920-b5d0-d8f3b3dec9b2)
+
+
+- **2) Tipo de ataque:** Se utilizó un ataque SYN flood, donde un cliente malicioso envió bastantes y pesados paquetes SYN a la red para agotar los recursos del servidor y evitar que aceptara conexiones legítimas.
+
+  ![imagen](https://github.com/user-attachments/assets/2efb9116-aebc-4be5-ace0-53b85f00c6a3)
+
+- **3) Snort Configuración:** Se configuró Snort con las reglas predeterminadas para ataques DoS, específicamente para detectar SYN floods y ping floods.
+
+![imagen](https://github.com/user-attachments/assets/ce9c3fa7-0ee9-4e9f-ac37-5c7c024e5042)
+
+## 6. Resultados
+
+![imagen](https://github.com/user-attachments/assets/46741522-e390-4df7-99c7-a6cf988df32b)
+
+Los resultados de las pruebas experimentales mostraron lo siguiente:
+  
+- **Detección de Ping flood:** Snort detectó correctamente el ping flood, alertando sobre el aumento excesivo de paquetes ICMP enviados al servidor objetivo.
+
+- **Tiempo de respuesta:** Snort reaccionó rápidamente a los ataques, generando alertas dentro del rango de 1 a 3 segundos después de que el tráfico malicioso alcanzara el umbral configurado para la detección.
+
+## 7. Conclusiones
+
+A partir de los resultados obtenidos, se concluye que Snort es una herramienta altamente eficaz para la detección de ataques DoS, particularmente SYN floods o ping floods. Su capacidad para identificar patrones de tráfico malicioso mediante firmas y anomalías le permite reaccionar rápidamente y generar alertas en tiempo real, lo cual es fundamental para mitigar el impacto de los ataques DoS en redes y servidores.
+
+### Ventajas:
+- **Eficiencia:** Snort detectó ataques DoS con una alta tasa de precisión y en tiempo real.
+- **Configurabilidad:** Snort permite configurar reglas específicas para detectar diferentes tipos de ataques DoS, lo que le otorga flexibilidad en su implementación.
+
+### Limitaciones:
+- **Falsos positivos:** Aunque la tasa de falsos positivos fue baja, algunos ataques legítimos de alta frecuencia pudieron haber sido malinterpretados como amenazas.
+- **Requiere mantenimiento de reglas:** Para detectar ataques DoS desconocidos o variantes nuevas, es necesario actualizar las reglas y firmas de Snort regularmente.
+
+Snort demuestra ser una herramienta confiable y efectiva en la detección de ataques DoS, aunque su desempeño puede mejorar con ajustes y actualizaciones continuas de las firmas y configuraciones. Para redes con alto riesgo de ataques DoS, su implementación es una estrategia valiosa para la protección y seguridad de un sistema.
+
+
 [Regresar al índice](../../README.md)
