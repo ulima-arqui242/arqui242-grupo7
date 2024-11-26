@@ -147,7 +147,7 @@ Creamos el archivo y copiamos y  el código que nos indica la pagina de https://
 
 #### Agregar el sendmail.js al index del backend
 
-
+![index](index.png)
 
 
 ## Demo Video
