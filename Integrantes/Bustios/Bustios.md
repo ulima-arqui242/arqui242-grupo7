@@ -172,6 +172,12 @@ Una vez generada la clave podemos ingresarla en la variable EMAIL_PASSWORD en el
 
 ![contra](clave.png)
 
+### 4. Prueba
+Por ultimo ejecutamos el backend y realizamos una petición de tipo POST al endpoint http://localhost:3009/sendmail e incluimos en su body los siguientes valores
+
+![image](https://github.com/user-attachments/assets/0b85fedc-ee7d-4d8a-b5f8-329da7618239)
+
+
 
 ## Demo Video
 
