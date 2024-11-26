@@ -155,7 +155,7 @@ A continuación definimos las siguientes variables dentro de un  .env en el back
 ![credenciales](env.png)
 
 #### Activamos verificación de 2 pasos
-Para poder generar una contraseña de aplicación para una cuenta de google es necesario activar primero la verificación de 2 paso
+Para poder generar una contraseña de aplicación para una cuenta de google es necesario activar primero la verificación de 2 pasos en el apartado de seguridad de la cuenta de google
 
 ![2pasos](2pasos.png)
 
