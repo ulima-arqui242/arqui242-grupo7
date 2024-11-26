@@ -158,6 +158,10 @@ Terminada la instalación, se procederá a explicar la metodología del proyecto
 A continuación se presentará un video de la demo que explicará más a detalle el trabajo descrito.
 [Video individual](https://drive.google.com/file/d/1yANwjCY09ROsNuj49xsa3Xe3aGUbfR_N/view?usp=sharing)
 
+## Video de la aplicación
+
+A continuación se presentará un video donde se implementa esta propouesta en el proyecto [Video individual 2] (https://drive.google.com/file/d/13sW1TFkBUZQbW1XsJtl22oeSbzLNedm4/view?usp=sharing)
+
 ## Fuentes
 [Doc2Vec — Computing Similarity between Documents](https://medium.com/red-buffer/doc2vec-computing-similarity-between-the-documents-47daf6c828cd)
 
