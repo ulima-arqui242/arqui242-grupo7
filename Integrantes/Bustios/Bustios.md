@@ -138,7 +138,7 @@ El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un pl
 
 #### Instalamos las librerias en el proyecto
 
-(npminstall.png)
+![install](npminstall.png)
 
 
 
