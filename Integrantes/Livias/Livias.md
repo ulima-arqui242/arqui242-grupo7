@@ -16,11 +16,15 @@ Aprender a seleccionar las mejores opciones para desarrollar un proyecto apropia
 
 # Tactica de disponibilidad: Degradación
 ## Panorama General
+En horario de alta demanada, los usuarios incurren a cargar muchos recursos de la página web. De los recursos más pesados serían las imágenes, estílos y videos. El sistema intenta gestionar varias peticiones "get" para retornar datos de alta calidad. No obstante, la página no termina de renderizar los recursos; por lo cual, afecta con la experiencia del usuario.
+
 ## Solución: Degradación
+Para que el sistema siga mostrando imágenes, estílos y videos sin problemas, inclusive en horarios de alta demanda, entonces se dispone de la táctica de "Degradación". La cual consiste en cambiar las imágenes o videos por unos con menor resolución para que el sistema tenga esa facilidad de renderizar los recursos. De esta manera, se evita que el módulo de perfil deje inoperativo la función de mostrar videos o imágenes .
+
 ## Métodos de degradación
-### Cambiar de base de datos
+
 ### Cambiar la resolución de la imagen
-La función principal cargarYRedimensionarImagen realiza varios pasos clave:
+El método consiste en crea un script para bajar la resolución. La función principal es cargarYRedimensionarImagen y realiza varios pasos clave:
 
 ### a) **Carga de la imagen**
 
@@ -89,8 +93,17 @@ const RedimensionarImagen = ({ imagenUrl, ancho, alto }) => {
 };
 
 export default RedimensionarImagen;
-
 ```
+
+### Cambiar de base de datos
+
+Este método consiste en crear otra base de datos y así cambiar de una resolución a otra cuando se necesite. Debido a que ya se implementó el script de python para las imagenes y solo faltaba bajar la resolución del video, se decidió con agregarle un campo adicional para ir intercambiando entre el video HD y el video sin HD. Este último, a diferencia de Youtube que baja de 1080p60 a 360p, el video también baja la calidad del audio gradualmente. 
+
+### Video
+
+A continuación, el video corto que presenta la implementación de la "Degradación" en el proyecto.
+
+https://drive.google.com/file/d/1KCAsnFatcfZ2DLk2IzlyphA9kvIX9RTp/view?usp=sharing 
 
 # Tema elegido: Técnicas NLP
 ## Panorama General
