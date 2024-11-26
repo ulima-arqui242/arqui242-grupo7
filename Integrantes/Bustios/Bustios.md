@@ -136,14 +136,17 @@ La idea central de este estilo arquitectónico es permitir la extensión de su f
 
 El plugin que se desea agregar al sistema base (core) es el de Nodemailer, un plugin que mediante sus propioas librerias que permite enviar correos electronicos desde código. Si seguimos las indicaciones en su propia web (https://www.nodemailer.com) para hacer uso de plugin nos encontramos con los siguientes pasos.
 
-#### Instalamos las librerias en el proyecto
+#### 1. Instalamos las librerias en el proyecto
 
 ![install](npminstall.png)
 
-#### Creamos un archivo.JS para la ruta en el backend
+#### 2. Creamos un sendmail.JS para la ruta en el backend
 Creamos el archivo y copiamos y  el código que nos indica la pagina de https://www.nodemailer.com , sin antes importar las librerias que se han utilizado para manejar los endpoints del backend. (En este caso se utilzó router. para manejar las peticiones. 
 
 ![install](sendmailjs.png)
+
+#### Agregar el sendmail.js al index del backend
+
 
 
 
