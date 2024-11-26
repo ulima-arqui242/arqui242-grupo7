@@ -166,8 +166,9 @@ Ahora definimos el nombre de la aplicación para la que se va a generar la clave
 
 ![claveapp](app.png)
 
-Una vez generada la clave podemos ingresarla en la variable EMAIL_PASSWORD en el .env 
-(ES DE SUMA IMPORTANCIA PROTEGER ESTA CLAVE YA QUE ES LA QUE PERMITE A CUALQUIER APLICACIÓN ENVIAR CORREOS EN NUESTRO NOMBRES)
+Una vez generada la clave podemos ingresarla en la variable EMAIL_PASSWORD en el .env visto al inicio del paso
+
+(ES DE SUMA IMPORTANCIA PROTEGER ESTA CLAVE YA QUE ES LA QUE PERMITE A CUALQUIER APLICACIÓN ENVIAR CORREOS EN NUESTRO NOMBRE)
 
 ![contra](clave.png)
 
