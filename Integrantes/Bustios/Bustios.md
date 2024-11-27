@@ -54,7 +54,7 @@ Para ello es necesario
 
 ### **Problema :**
 
-Hoy en dia las aplicaciones  que corren en navegadores  hacen uso de multiples API's para ofrecer funcionalidad y valor a las empresas y usuarios. Estas usualmente se hacen mediante llamadas en el protocolo HTTP y Rest, y aunque en al acutalidad la gra mayoria de estas apis están optimizadas para responder en 100ms o menos todavia hay muchos factores que pueden afectar la latencia en la respuesta, cómo por ejemplo:
+Hoy en dia las aplicaciones  que corren en navegadores hacen uso de multiples API's para ofrecer funcionalidad y entregar valor a las empresas y usuarios, las cuales pueden interactura solo con los elementos de sistema o tambien con otros externos de terceros. Estas consultas se hacen usualmente mediante el  protocolo HTTP y Rest, y aunque en al acutalidad la gran mayoria de estas apis están optimizadas para responder en 100ms o menos todavia hay muchos factores que pueden afectar la latencia en la respuesta, cómo por ejemplo:
 
 - Componentes de seguridad.
 - La ubicación geográfica relativa del autor de la llamada y el backend.
@@ -64,7 +64,7 @@ Hoy en dia las aplicaciones  que corren en navegadores  hacen uso de multiples A
 - Longitud de la cola de procesamiento.
 - El tiempo que tarda el backend en procesar la solicitud.
 
-Esto se refuerza aún más cuando de peticiones sincronas se tratan, aunque si bien se podria optar por peticiones asíncronas simples que se maneje en la misma sesión no podria ser viable para sistemas disbribuidos o con mulitples servicios.
+Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas recursos al backend todavia existen otros como la arquitectura de red, que están fuera de control del desarrollador. Pero aún así todavia existen escenarios en los que el procesamiento de la respuesta a una petición síncrona puede tardar demasiado como para responer en la misma conexión, para ello gacias al código existe la posibilidad hacer una petición syncrona de manera asyncrona 
 
 ### **Solución:**
 
