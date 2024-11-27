@@ -25,12 +25,16 @@ Como un desarrollador independiente y dueño de mi propio estudio de desarrollo 
 ## Tema elegido: API Management
 
 ### Desarrollo Conceptual
-API management o gestión de API es el proceso de diseño, publicación, documentación y análisis de API, en un entorno seguro. En la cual mediante una herramienta de administración de API's, se puede garantizar que tanto APIs públicas como internas funcionen correctamente y sean seguras. Además, aglunas de las carateristicas que se pueden encontrar en este tipo de herramientas son las de api gateway para gestionar, proteger y optimizar el tráfico entre el Frontend y Backend, 
+
+API management o gestión de API es el proceso de diseño, publicación, documentación y análisis de API, en un entorno seguro. En la cual mediante una herramienta de administración de API's, se puede garantizar que tanto APIs públicas como internas funcionen correctamente y sean seguras. Además, algunas de las funcionalidades que se pueden encontrar en este tipo de herramientas son las de api gateway para gestionar y optimizar el tráfico entre el Frontend y Backend, Monitoreo y analisis del trafico cada vez que se consulta una de las api's, pruebas y simulación de las api's previas al despliegue , enrutamiento y transformación de data, etc. La principal forma mediante la que se logra todo esto es a traeves de proxys
+
+
+
 
 
 ### Consideraciones Técnicas:
 
-La plataforma de API management en cuestión es "Apigee", plataforma de API management de google. Para este proyecto usaremos APIGEE para establecer un proxy entre el frontend y backend .
+La plataforma de API management en cuestión es "Apigee", plataforma de API management de google, mediante la cual estableceremos multiples proxys que direcionará el trafico del cliente al backend  y así poder obtener métricas sobre su tasa de uso y errores. 
 
 Para ello es necesario 
 
