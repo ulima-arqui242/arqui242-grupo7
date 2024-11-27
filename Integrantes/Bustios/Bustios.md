@@ -25,23 +25,8 @@ Como un desarrollador independiente y dueño de mi propio estudio de desarrollo 
 ## Tema elegido: API Management
 
 ### Desarrollo Conceptual
-API management o gestión de API es el proceso de diseño, publicación, documentación y análisis de API, en un entorno seguro. Mediante una herramienta de administración de API, se puede garantizar que tanto APIs públicas como internas funcionen correctamente y sean seguras. Puedes controlar el acceso, nutrir a la comunidad de suscriptores, recopilar y analizar estadísticas de uso e informar sobre el rendimiento.
+API management o gestión de API es el proceso de diseño, publicación, documentación y análisis de API, en un entorno seguro. En la cual mediante una herramienta de administración de API's, se puede garantizar que tanto APIs públicas como internas funcionen correctamente y sean seguras. Además, aglunas de las carateristicas que se pueden encontrar en este tipo de herramientas son las de api gateway para gestionar, proteger y optimizar el tráfico entre el Frontend y Backend, 
 
-Usualmente, los componentes de API management, proporcionan mecanismos y herramientas para ayudar a la comunidad de desarrolladores y suscriptores.
-
-#### Diseño de API: es decir, brinda a los usuarios, desde desarrolladores hasta socios, la capacidad de diseñar, publicar e implementar una API, así como registrar documentación, políticas de seguridad, descripciones, límites de uso, capacidad de tiempo de ejecución, entre otra información relevante.
-
-#### Puerta de enlace de API: 
-funciona como un filtro de todas las APIs al hacer cumplir las políticas y solicitudes de seguridad de las APIs relevantes y también garantiza la autorización y la seguridad. 
-
-#### Tienda de APIs: 
-brinda a los usuarios la capacidad de mantener sus APIs en una tienda o catálogo donde pueden exponerlas a posibles interesados. Además, los usuarios pueden obtener soporte de los usuarios y la comunidad, etc. 
-
-#### Análisis de API: 
-la gestión de APIs permite a los usuarios monitorear el uso del API, la carga, los registros, las transacciones, los datos históricos, entre otras métricas que informan mejor el estado y el éxito de las APIs disponibles.
-
-#### Monetización: 
-esta función permite el cobro por el acceso a APIs comerciales. Esto incluye el soporte para configurar reglas de precios, según el uso, la carga y la funcionalidad, emitir facturas y cobrar pagos.
 
 ### Consideraciones Técnicas:
 
@@ -64,9 +49,9 @@ Hoy en dia las aplicaciones  que corren en navegadores hacen uso de multiples AP
 - Longitud de la cola de procesamiento.
 - El tiempo que tarda el backend en procesar la solicitud.
 
-Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas recursos al backend todavia existen otros como la arquitectura de red, que están fuera de control del desarrollador. Pero aún así todavia existen escenarios en los que el procesamiento de la respuesta a una petición síncrona puede tardar demasiado como para responer en la misma conexión, para ello gacias al código existe la posibilidad hacer una petición syncrona de manera asyncrona 
+Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas recursos al backend todavia existen otros como la arquitectura de red, que están fuera de control del desarrollador. Pero aún así todavia existen escenarios en los que el procesamiento de la respuesta de una petición síncrona puede tardar demasiado como para responer en la misma conexión, para ello existe la posibilidad de hacer una petición asíncrona que parezca sincrona
 
-### **Solución:**
+### **Consideraciones Tecnicas:**
 
 
 1. El cliente envia una petición POST conteniendo la data necesarioa de entrada al endpoint  , el servidor recibe la petición y pone en cola el recurso solicitado a la vez envia una respuesta HTTP 200 (Aceptado) conteniendo una dirección a un endpoint al cual consultar por el estado del recurso al que se solicitó acceso.
