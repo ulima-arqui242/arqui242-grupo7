@@ -93,6 +93,19 @@ Finalmente, podemos consultar directamente a la url mediante el navegador o una 
 ![image](https://github.com/user-attachments/assets/ae19cfc8-33ba-4c58-a98f-018ffd7c4b73)
 
 
+Ahora que ya creamos y configuramos el proxy podemos ingresar al apartado de Analiticas de tráfico, para ello buscamos en la barra de busqueda "observability" y seleccionamos la siguiente opción.
+
+![image](https://github.com/user-attachments/assets/f4657742-79b0-4b0c-889a-5a1f8dc2483e)
+
+
+Ingresamos y nos movemos a la barra lateral y nos vamos a la sección de "Explorar", apartado en el que encontraremos distintas formas de visualizar la información de trafico de nuestro entorno de proxys
+
+![image](https://github.com/user-attachments/assets/0585d1c7-bba9-4fa4-94d1-6dcb1f637b92)
+
+
+En esta ocación nos iremos al explorador de registros, desde el cual podremos visualizar la información de todas las consultas que se hacen cómo el cliente desde que se hizo , la hora y el proxy en cuestión que se consumió.
+
+![image](https://github.com/user-attachments/assets/fff01d33-77d2-4d87-9f70-f1946dd49eca)
 
 
 
@@ -156,7 +169,7 @@ Variables indispensables para esta demo de patrón
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
 
 
-#### DEMO video
+** #### DEMO video **
 
 https://drive.google.com/file/d/1FepBBbhZDsLIr0F_-yzkZ4Id3qQ_G-Vd/view?usp=sharing
 
