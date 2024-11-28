@@ -259,5 +259,10 @@ A partir de los resultados obtenidos, se concluye que Snort es una herramienta a
 
 Snort demuestra ser una herramienta confiable y efectiva en la detección de ataques DoS, aunque su desempeño puede mejorar con ajustes y actualizaciones continuas de las firmas y configuraciones. Para redes con alto riesgo de ataques DoS, su implementación es una estrategia valiosa para la protección y seguridad de un sistema.
 
+### Link al video
+
+https://www.youtube.com/watch?v=V0uDJufSpNI
+
+
 
 [Regresar al índice](../../README.md)
