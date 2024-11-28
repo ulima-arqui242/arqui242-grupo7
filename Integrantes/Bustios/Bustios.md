@@ -57,10 +57,13 @@ Ahora nos encontraremos en el panel de control de Apigee, desde donde podremos a
 
 ![image](https://github.com/user-attachments/assets/1cecd2ff-1e0c-4c5d-9d25-a20d6fbb1ce5)
 
+Desde aquí se podran acceder a distintas funcionalidades de apigee, pero por fines de practicidad y tiempo probaremos la función de monitorización y analisis , para ello primero deberemos de crear un proxy que haga de intermediario entre el frontend y backend.  Para ello nos dirigimos a la barra lateral y accedemos a la sección de proxies de api.
 
-, mediante la cual estableceremos multiples proxys que direcionará el trafico del cliente al backend  y así poder obtener métricas sobre su tasa de uso y errores. 
+![image](https://github.com/user-attachments/assets/7af67d20-c371-4867-8ce6-ad56f9aef028)
 
-Para ello es necesario 
+
+
+
 
 
 ## Patron Cloud a Implementar : Asynchronous Request-Reply
