@@ -134,18 +134,19 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 ### **Desarrollo de código :**
 
 #### ** Variables Globales**
-![Variables Globales](Globales.png)
+
+Variables indispensables para esta demo de patrón
+![image](https://github.com/user-attachments/assets/574e22c8-10f7-4504-8a9a-c74301739d13)
+
 
 
 ####  ** API validar DNI**
-![Variables Globales](apiback.png)
+![image](https://github.com/user-attachments/assets/46b9e604-d7af-4769-8b07-9053d6738713)
+
+####  ** API Estado validar**
+![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
 
 
-####  ** API Estado validar GET**
-![Variables Globales](apiestadoGET.png)
-
-####  ** API Estado validar POST**
-![Variables Globales](apiestadoPOST.png)
 
 
 ####  ** Variables Globales**
