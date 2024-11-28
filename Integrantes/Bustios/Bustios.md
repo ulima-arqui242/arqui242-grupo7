@@ -30,19 +30,35 @@ API management o gestión de API es el proceso mediante el cual las empresas pue
 
 **Api Gateway** , un controlador de tráfico que guía las solicitudes de API entrantes a los microservicios de back-end adecuados. Comprueba si el cliente que realiza la solicitud tiene acceso verificando sus credenciales y permisos, al igual que un guardia de seguridad vigilante, ayuda con la transformación de solicitudes asegurándose de que los datos se intercambien en el formato correcto y por ultimo tambien de limitar la velocidad y monitorear el flujo del trafico.
 
-**Portal de Desarrollador**, 
+**Portal de Desarrollador**, funciona como un hub para que los desarrolladores accedan a información sobre sus API y comprendan cómo integrarlas de manera óptima en sus aplicaciones , en este podran encontrar contenidos como documentación, ejemplos de código, tutoriales y otros recursos que puedan ayudar a los desarrolladores a trabajar con las distintas apis aún si trabajan en distintas áreas.
 
+**Gestir de Ciclo de vida** , proceso en el que se documenta toda la información desde la planeación, diseño , testo , despliegue y retiro de las apis. Esto con la finalidad de salvaguardad la integridad de cualquiero servicio o negocio que dependa de ellas.
 
+**Monitorización y Análisis**, conjunto de métricas y reportes a través de los cuales se puede registar la tasa de uso de todas las apis, el nivel de carga y registrar la información de los clientes que relizaron solicitudes. Además, es posible utilizar la información recopilada para diagnosticar problemas o errores en los servicios y tambien procesarla para su uso en la toma de decisiónes a nivel coporativo.
 
-
-
-
-
-
+Realmente no hay razon para no implmenetar Api Management en una solución para una empresa o negocio, aspectos como el tener toda arquitectura de APIs centralizada junto con medidas de seguridad , monitoreo y analisis y documentación son muy atractivas. Los unicos aspectos que se deben de tener en cuenta y aceptar son los costos adicionales por la contratación del servicio, la dependencia con el proveedor , la curva de aprendizaje y el impacto en el rendimiento, los cuales pueden ser abrumadores para una mipe pero  para una mediana o gran empresa son más que aceptables.
 
 ### Consideraciones Técnicas:
 
-La plataforma de API management en cuestión es "Apigee", plataforma de API management de google, mediante la cual estableceremos multiples proxys que direcionará el trafico del cliente al backend  y así poder obtener métricas sobre su tasa de uso y errores. 
+La plataforma de API management en cuestión que utilizaremos en esta ocación es "Apigee", plataforma de API management de google cloud pque ofreec varias de las funciones mencionadas anteriormente. Antes de empezar es importante recalcar que al tratarse de una herramienta de google necesitaremos una cuenta de google para acceder a sus servicios cloud. Dicho servicio tiene un costo que varia en base al uso de sus distintas funcionalidad, pero afortunadamente google ofrece un crédito de 300$ para gastar en 90 dias cuando nos registramos por primera vez aunque claro de todas maneras tendremos que registrar una dirección de pago y una  tarjeta de debito/crédito. 
+
+![image](https://github.com/user-attachments/assets/c417d07c-d021-4c2b-bdf7-d5e0bf3b783d)
+
+![image](https://github.com/user-attachments/assets/8bb3a645-7c3d-4ef3-b395-9729ce71d462)
+
+Despues de que el sistema valide nuestros datos nos enviará a la pantalla de inicio de Gogle Cloud, donde en el centro podremos observar nuestros créditos restantes y su fecha de caducidad
+![image](https://github.com/user-attachments/assets/88624264-ae9e-45bb-a8b5-9f179cd9e820)
+
+Luego buscamos Apigee en el buscador
+
+![image](https://github.com/user-attachments/assets/c1f4a7ed-4dcb-42a8-8fd3-81c83add7ff5)
+
+Ahora nos encontraremos en el panel de control de Apigee, desde donde podremos acceder a todas las funcionalidades que ofrecen. Recalco de que la primera vez que se ingrese nos pedirá crear un entorno para registar nuestra apis. ( no puedo hacerlo de nuevo ya que no me deja registrar la misma tarjeta en otra cuenta)
+
+![image](https://github.com/user-attachments/assets/1cecd2ff-1e0c-4c5d-9d25-a20d6fbb1ce5)
+
+
+, mediante la cual estableceremos multiples proxys que direcionará el trafico del cliente al backend  y así poder obtener métricas sobre su tasa de uso y errores. 
 
 Para ello es necesario 
 
