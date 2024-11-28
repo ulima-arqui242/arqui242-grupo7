@@ -144,9 +144,12 @@ Variables indispensables para esta demo de patrón
 
 
 ** API Estado validar **
+
+
+
+
+
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
-
-
 
 
 
