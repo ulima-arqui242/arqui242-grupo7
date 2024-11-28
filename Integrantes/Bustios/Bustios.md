@@ -170,7 +170,7 @@ Variables indispensables para esta demo de patrón
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
 
 
-** #### DEMO video **
+#### **Demo**
 
 https://drive.google.com/file/d/1FepBBbhZDsLIr0F_-yzkZ4Id3qQ_G-Vd/view?usp=sharing
 
