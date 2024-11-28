@@ -98,7 +98,7 @@ Finalmente, podemos consultar directamente a la url mediante el navegador o una 
 
 ## Patron Cloud a Implementar : Asynchronous Request-Reply
 
-### **Problema :**
+### ** Desarrollo Conceptual **
 
 Hoy en dia las aplicaciones  que corren en navegadores hacen uso de multiples API's para ofrecer funcionalidad y entregar valor a las empresas y usuarios, las cuales pueden interactura solo con los elementos de sistema o tambien con otros externos de terceros. Estas consultas se hacen usualmente mediante el  protocolo HTTP y Rest, y aunque en al acutalidad la gran mayoria de estas apis están optimizadas para responder en 100ms o menos todavia hay muchos factores que pueden afectar la latencia en la respuesta, cómo por ejemplo:
 
@@ -114,6 +114,10 @@ Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas 
 
 ### **Consideraciones Tecnicas:**
 
+El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
+Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
+
+
 La implementación de patrón se hace mediante lo que se conoce como polling en http.
 
 1. El cliente envia una petición POST conteniendo la data necesarioa de entrada al endpoint  , el servidor recibe la petición y pone en cola el recurso solicitado a la vez envia una respuesta HTTP 200 (Aceptado) conteniendo una dirección a un endpoint al cual consultar por el estado del recurso al que se solicitó acceso.
@@ -125,32 +129,24 @@ La implementación de patrón se hace mediante lo que se conoce como polling en 
 ![foto](asy.png)
 
 
-### **Aplicación en el trabajo de Grupo :**
-
-El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
-Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
 
 
-### **Desarrollo de código :**
+###% **Desarrollo de código :**
 
-#### ** Variables Globales**
+** Variables Globales**
 
 Variables indispensables para esta demo de patrón
 ![image](https://github.com/user-attachments/assets/574e22c8-10f7-4504-8a9a-c74301739d13)
 
 
-
-####  ** API validar DNI**
+ ** API validar DNI **
 ![image](https://github.com/user-attachments/assets/46b9e604-d7af-4769-8b07-9053d6738713)
 
-####  ** API Estado validar**
+** API Estado validar **
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
 
 
 
-
-####  ** Variables Globales**
-![foto](https://drive.google.com/file/d/1vcbcpC35dEgOmZGqwNAAGIKP4BugLG_y/view?usp=drive_link)
 
 
 
