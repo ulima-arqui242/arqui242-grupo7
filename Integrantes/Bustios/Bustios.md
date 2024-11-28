@@ -110,24 +110,22 @@ Hoy en dia las aplicaciones  que corren en navegadores hacen uso de multiples AP
 - Longitud de la cola de procesamiento.
 - El tiempo que tarda el backend en procesar la solicitud.
 
-Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas recursos al backend todavia existen otros como la arquitectura de red, que están fuera de control del desarrollador. Pero aún así todavia existen escenarios en los que el procesamiento de la respuesta de una petición síncrona puede tardar demasiado como para responer en la misma conexión, para ello existe la posibilidad de hacer una petición asíncrona que parezca sincrona
-
-### **Consideraciones Tecnicas:**
-
-El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
-Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
+Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas recursos al backend todavia existen otros como la arquitectura de red, que están fuera de control del desarrollador. Pero aún así todavia existen escenarios en los que el procesamiento de la respuesta de una petición síncrona puede tardar demasiado como para responer en la misma conexión, para ello existe la posibilidad de hacer una petición asíncrona  parezca sincrona. Esto con la finalidad de permitir al cliente continuar con sus funciones sin que tenga que esperar a la respuesta de la api de manera esticta,  y podiendo consultar nuevamente sobre el estaado de la petición cada cierto tiempo , esto se logra mediante lo que se conoce como polling en el siguiente gráfico.
 
 
-La implementación de patrón se hace mediante lo que se conoce como polling en http.
+
+![foto](asy.png)
+
 
 1. El cliente envia una petición POST conteniendo la data necesarioa de entrada al endpoint  , el servidor recibe la petición y pone en cola el recurso solicitado a la vez envia una respuesta HTTP 200 (Aceptado) conteniendo una dirección a un endpoint al cual consultar por el estado del recurso al que se solicitó acceso.
 2. El cliente envia una petición GET al endpoint de estado y recibe un HTTP 200 O 404 indicando que el recurso solicitado todavia no está listo.
 3. El cliente envia nuevamente una petición GET al endoint de estado luego de un timpo determinado y el servidor envia un HTTP 302 (found) con la dirección de recurso solicitado .
 4. Por ultimo el cliente envia una petición GET a la dirección brindada por el servidor para finalmente acceder al recurso solicitado.
 
+### **Consideraciones Tecnicas:**
 
-![foto](asy.png)
-
+El problema que se logró identificar es que uno ed los pasos que los clientes y proveedores deben completar para registrarse es la validación del DNI o RUC por motivos de seguridad. Debido a que el registros consta de varios pasos y que la validadción puede demorar o dar algún error dependiendo de la API seria un problema detener el registro unicamente para validar los documentos de identidad cuando podrian validarse antes de enviar la conclusión del registro.
+Mediante la implementación del patrón Asynchronous Request-Reply se espera que los usuarios puedan completar formulario de registro sin la necesidad de esperar a que su dni o RUC se valide meidiante la API de APIsPerú, cumpliendo así con la finalidad del patrón Asynchronous Request-Reply de permitir seguir haciendo uso de otras funciones de la aplicación hast aque se reciba la respuesta de la API.
 
 
 
@@ -136,11 +134,14 @@ La implementación de patrón se hace mediante lo que se conoce como polling en 
 ** Variables Globales**
 
 Variables indispensables para esta demo de patrón
+
 ![image](https://github.com/user-attachments/assets/574e22c8-10f7-4504-8a9a-c74301739d13)
 
 
  ** API validar DNI **
 ![image](https://github.com/user-attachments/assets/46b9e604-d7af-4769-8b07-9053d6738713)
+
+
 
 ** API Estado validar **
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
