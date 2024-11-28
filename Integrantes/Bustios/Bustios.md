@@ -164,10 +164,14 @@ El estilo arquitectónico de Microkernel o también conocido como arquitectura d
 
 La idea central de este estilo arquitectónico es permitir la extensión de su funcionalidad o personalización, pero respetando el principio Open-Closed, es decir, está abierto para extender la funcionalidad, pero cerrado para modificar su funcionalidad principal. De esta forma, se logra que los desarrolladores pueden crear plugins para agregar nueva funcionalidad o extender la existente, pero sin alterar la funcionalidad Core del sistema
 
-#### Ventajas
+#### Ventajas :
 
   - Escalabilidad: El patrón permite agregar funcionalidades adicionales a traves de módulos o plugins sin modificar el nucleo del sistema, al tomar este enfoque de arquitectura en vez de implementar multiples funcionalidades junto con el nucleo base se logra reducir el acoplamiento.
+  - Confiabilidad: Al reducir la funcionalidad crítica de sistema al núcleo se reduce la probabilidad de un fallo que comprometa a todo el sistema.
+  - Flexibilidad: El basarse en una arquitectura de plugins permite agregar y activar o desactivarlos según las necesidades del sistema, permitiendo una customización extrema para el desarrolador,
 
+#### Desventajas :
+-
 
 
 **Consideraciones tecnicas :**
