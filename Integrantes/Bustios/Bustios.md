@@ -26,10 +26,15 @@ Como un desarrollador independiente y dueño de mi propio estudio de desarrollo 
 
 ### Desarrollo Conceptual
 
-API management o gestión de API es el proceso mediante el cual las empresas pueden asegurarse de que sus Apis sean  consumibles, seguras y administradas . Esto se logra mediante herramientas de Api Management, entre las cuales casi siempre encontraremos 4 funciones indispensables. Api Gateway, elemento que se situa entre el cliente web y los sistemas y que se encarga de manejar todas las solicitudes de enrutamiento 
+API management o gestión de API es el proceso mediante el cual las empresas pueden asegurarse de que sus Apis sean  consumibles, seguras y administradas . Esto se logra mediante herramientas de Api Management como Kong o APIGEE, entre sus multiples funciones encontraremos las 4 básicas y escenciales.
+
+**Api Gateway** , un controlador de tráfico que guía las solicitudes de API entrantes a los microservicios de back-end adecuados. Comprueba si el cliente que realiza la solicitud tiene acceso verificando sus credenciales y permisos, al igual que un guardia de seguridad vigilante, ayuda con la transformación de solicitudes asegurándose de que los datos se intercambien en el formato correcto y por ultimo tambien de limitar la velocidad y monitorear el flujo del trafico.
+
+**Portal de Desarrollador**, 
 
 
-En la cual mediante una herramienta de administración de API's, se puede garantizar que tanto APIs públicas como internas funcionen correctamente y sean seguras. Además, algunas de las funcionalidades que se pueden encontrar en este tipo de herramientas son las de api gateway para gestionar y optimizar el tráfico entre el Frontend y Backend, Monitoreo y analisis del trafico cada vez que se consulta una de las api's, pruebas y simulación de las api's previas al despliegue , enrutamiento y transformación de data, etc. La principal forma mediante la que se logra todo esto es a traeves de proxys
+
+
 
 
 
