@@ -464,4 +464,10 @@ node app.js
 
 ## Conclusión
 HashiCorp Vault es una herramienta esencial para organizaciones que buscan proteger y gestionar secretos de forma centralizada. Su capacidad para emitir credenciales dinámicas, integrarse con diversas plataformas y ofrecer servicios avanzados de cifrado lo posiciona como un estándar en entornos modernos. Aunque su curva de aprendizaje puede ser pronunciada, los beneficios en términos de seguridad y control justifican ampliamente la inversión de tiempo y recursos.
+
+
+# ENLACE DEL VIDEO :
+### https://drive.google.com/file/d/1H6wyYQPxXLVYR3J7ucRF9rKMX8Oz7Kr6/view?usp=sharing
+
+
 [Regresar al índice](../../README.md)
