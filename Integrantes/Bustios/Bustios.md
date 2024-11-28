@@ -162,7 +162,7 @@ El estilo arquitectónico de Microkernel o también conocido como arquitectura d
 ![Diagrama](microkernel.jpg)
 
 
-La idea central de este estilo arquitectónico es permitir la extensión de su funcionalidad o personalización, pero respetando el principio Open-Closed, es decir, está abierto para extender la funcionalidad, pero cerrado para modificar su funcionalidad principal. De esta forma, se logra que los desarrolladores pueden crear plugins para agregar nueva funcionalidad o extender la existente, pero sin alterar la funcionalidad Core del sistema
+La idea central de este estilo arquitectónico es permitir la extensión de su funcionalidad o personalización, pero respetando el principio Open-Closed, es decir, está abierto para extender la funcionalidad, pero cerrado para modificar su funcionalidad principal, permitiendo probar cada uno de los plugins de manera independiente sin mucha dependencia del nucleo . De esta forma, se logra que los desarrolladores pueden crear plugins para agregar nueva funcionalidad o extender la existente, pero sin alterar la funcionalidad Core del sistema
 
 #### Ventajas :
 
@@ -171,7 +171,9 @@ La idea central de este estilo arquitectónico es permitir la extensión de su f
   - Flexibilidad: El basarse en una arquitectura de plugins permite agregar y activar o desactivarlos según las necesidades del sistema, permitiendo una customización extrema para el desarrolador,
 
 #### Desventajas :
--
+- Complejidad de desarrollo: A medida que se añaden más y más plugins se hace mas dificil mantener la comunicación eficiente con  el núcleo, por lo que la implementación de cada plugin tiene que estar correctamente docuentado para ahorrar tiempo.
+- Rendimiento : Al añadir gran cantidad de plugins existe la posibilidad afectar en el rendimiento del sistema en su totalidad debido a la excesiva carga de trabajo adicional
+- Costo: El intentar implementar este tipo de arquitectura puede ser mas costoso en terminos montarios y tiempo frente a otras.
 
 
 **Consideraciones tecnicas :**
