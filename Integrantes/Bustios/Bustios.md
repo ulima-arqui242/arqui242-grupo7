@@ -114,6 +114,7 @@ Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas 
 
 ### **Consideraciones Tecnicas:**
 
+La implementación de patrón se hace mediante lo que se conoce como polling en http.
 
 1. El cliente envia una petición POST conteniendo la data necesarioa de entrada al endpoint  , el servidor recibe la petición y pone en cola el recurso solicitado a la vez envia una respuesta HTTP 200 (Aceptado) conteniendo una dirección a un endpoint al cual consultar por el estado del recurso al que se solicitó acceso.
 2. El cliente envia una petición GET al endpoint de estado y recibe un HTTP 200 O 404 indicando que el recurso solicitado todavia no está listo.
@@ -122,17 +123,6 @@ Si bien algunos de estos factores se pueden mitigar escalando y añandiendo mas 
 
 
 ![foto](asy.png)
-
-
-
-### **Casos de aplcación :**
-
-
-
-
-
-
-
 
 
 ### **Aplicación en el trabajo de Grupo :**
