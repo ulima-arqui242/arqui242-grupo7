@@ -129,7 +129,9 @@ Mediante la implementación del patrón Asynchronous Request-Reply se espera que
 
 
 
-###% **Desarrollo de código :**
+### **Desarrollo de código :**
+
+Cabe aclarar que la ejecución de este patrón se puede hacer de una manera pero escencialmente demuestra el punto del patrón
 
 ** Variables Globales**
 
@@ -139,6 +141,8 @@ Variables indispensables para esta demo de patrón
 
 
  ** API validar DNI **
+
+ 
 ![image](https://github.com/user-attachments/assets/46b9e604-d7af-4769-8b07-9053d6738713)
 
 
@@ -152,7 +156,9 @@ Variables indispensables para esta demo de patrón
 ![image](https://github.com/user-attachments/assets/8888e751-af31-4ded-81e8-e82be95c7d54)
 
 
+#### DEMO video
 
+https://drive.google.com/file/d/1FepBBbhZDsLIr0F_-yzkZ4Id3qQ_G-Vd/view?usp=sharing
 
 ## Patrón Arquitectura MicroKernel
 
