@@ -61,7 +61,21 @@ Desde aquí se podran acceder a distintas funcionalidades de apigee, pero por fi
 
 ![image](https://github.com/user-attachments/assets/7af67d20-c371-4867-8ce6-ad56f9aef028)
 
+Le damos a Create 
+![image](https://github.com/user-attachments/assets/306738b6-4193-43f4-a282-f06a689d6e89)
 
+Ahora procedemos a hacer lo siguiente:
+
+1. selecionamos el template de Reverse proxy.
+2. Le asignamos un nombre al proxy para identificarlo.
+3. Seteamos el basepath para el proxy a nuestro gusto (apigee generará uno por default con el mismo nombre que el del proxy)
+4. Podemos ingresar una descripción para su mejor entendimiento por otros miembro del equipo.
+5. Ingresamos la dirección de la API en el backend .
+
+![image](https://github.com/user-attachments/assets/6da49952-f3fb-4b24-a43c-e5fc8185a9bb)
+
+   
+selecionamos el template de Reverse proxy y le asignamos un nombre, luego de ingresar el nombre automaticamente apigee generará el basepath con el mismo nombre ( aunque el usuario puede cambiarlo a su gusto)  
 
 
 
