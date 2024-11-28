@@ -80,9 +80,13 @@ Ahora procedemos a seleccionar el entorno en donde planeamos desplegar el proxy.
 
 ![image](https://github.com/user-attachments/assets/8e5f1128-376d-4602-824d-ab8e78ca1b1e)
 
+Ahora teniendo el proxy desplegado ponemos probar a consultar el endopoint a través del proxy, para ello **necesitamos la URL del entorno en el que la desplegamos** por lo que nos dirigirémos a la barra lateral y descenderemos hasta encontrar la opción de "entornos" en el apartado de administración.
 
-   
-selecionamos el template de Reverse proxy y le asignamos un nombre, luego de ingresar el nombre automaticamente apigee generará el basepath con el mismo nombre ( aunque el usuario puede cambiarlo a su gusto)  
+![image](https://github.com/user-attachments/assets/978109b6-6ddf-4bf1-b5c4-72c0208cb542)
+
+ahora nos dirigimos a la pestaña de Grupos de Entornos y encontraremos las URL's de los entornos creados.
+
+![image](https://github.com/user-attachments/assets/044d28bf-3391-40e7-955b-b881366e0d2e)
 
 
 
