@@ -88,6 +88,11 @@ ahora nos dirigimos a la pestaña de Grupos de Entornos y encontraremos las URL'
 
 ![image](https://github.com/user-attachments/assets/044d28bf-3391-40e7-955b-b881366e0d2e)
 
+Finalmente, podemos consultar directamente a la url mediante el navegador o una harramienta de testeo como postman.
+
+![image](https://github.com/user-attachments/assets/ae19cfc8-33ba-4c58-a98f-018ffd7c4b73)
+
+
 
 
 
